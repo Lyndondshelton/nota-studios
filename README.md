@@ -1,7 +1,7 @@
 Main code for NOTA Studios website it located in nota-studios/nota-studios. Code is deployed through Vercel and is hosted at the following locations:
 
-Production Environment - <a href="https://nota-studios.vercel.app">nota-studios.vercel.app</a><br/>
-Testing Environment    - <a href="https://tenv-nota-studios.vercel.app">tenv-nota-studios.vercel.app</a>
+Production Environment - [nota-studios.vercel.app](https://nota-studios.vercel.app)
+Testing Environment    - [tenv-nota-studios.vercel.app](https://tenv-nota-studios.vercel.app)
 
 Coding changes will take place in "coding branches" with the following naming convention: _"B-123456"_ and should be created from branch _main_ and no other branch. 
 
