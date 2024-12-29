@@ -1,4 +1,6 @@
 import ServicesList from "@/app/components/services-accordian-list"
+import SessionButton from "@/app/components/book-session-button"
+
 
 export default function Services(){
     const studioHours = [
@@ -22,16 +24,18 @@ export default function Services(){
         <div className="flex md:flex-row sm:flex-col">
             <div className="md:w-1/2 sm:w-full p-6 md:order-2" >
                 <ServicesList />
+
+                <div className="w-full mt-10 h-4 md:order-3">
+                    <SessionButton />
+                </div>
             </div>
             <div className="md:w-1/2 sm:w-full p-6 md:order-first">
                 <h3>Studio Hours</h3>
-                {/* print each studio hours */}
                 {studioHours.map((schedule, index) =>(
                     <p key={index}>{schedule.day} {schedule.hours}</p>
                 ))}
 
                 <h3 className="mt-4">Studio Equipment</h3>
-                {/* print each studio equipment*/}
                 {studioEquipment.map((equipment, index) => (
                     <p key={index}>{equipment}</p>
                 ))}
