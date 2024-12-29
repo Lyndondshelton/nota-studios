@@ -13,7 +13,8 @@ export default {
         foreground: "var(--foreground)",
       },
       height:{
-        "landing-page": "32rem"
+        "landing-page": "32rem",
+        "0.1":"1px"
       }
     },
   },
