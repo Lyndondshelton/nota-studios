@@ -50,7 +50,7 @@ export const STUDIO_EQUIPMENT =[
         "FOCUSRITE CM25 MKIII CONDENSER MICROPHONE",
         "SSL 2+ AUDIO INTERFACE",
         "ALESIS V25 MIDI KEYBOARD"
-    ]
+    ];
 
 //Images
 export const NOTA_PRIMARY_LOGO = "/nota_logo_primary.png";

@@ -1,7 +1,8 @@
-'use client'; //necessary for React Hooks like "useState"
+'use client';
 import Image from "next/image";
 import { useState } from "react";
 import { PLUS_ICON } from "@/app/constants/constants";
+import SessionButton from "../book-session-button";
 
 export default function AccordianItem(props){
     const SERVICE_INFO = 
@@ -10,6 +11,7 @@ export default function AccordianItem(props){
             <br />
             <p className="whitespace-pre-line">{props.servicePrice}</p>
             <br />
+            <SessionButton />
         </div>;
 
     const [isExpanded, setExpanded] = useState(false);
