@@ -1,10 +1,10 @@
 'use client'; //necessary for React Hooks like "useState"
 import Image from "next/image";
 import { useState } from "react";
+import { PLUS_ICON } from "@/app/constants/constants";
 
 export default function AccordianItem(props){
-    const plusIcon = "/plus-svgrepo-com.svg"
-    const serviceInfo = 
+    const SERVICE_INFO = 
         <div className="p-4 last:border-b-2">
             <p className="whitespace-pre-line">{props.serviceDesc}</p>
             <br />
@@ -25,12 +25,12 @@ export default function AccordianItem(props){
                     <span className="flex-initial">{props.serviceName}</span>
                     <div className="w-6 h-6 flex-initial">
                         <div className="plus">
-                            <Image src={plusIcon} alt={plusIcon} width={800} height={800} className="w-full"/>
+                            <Image src={PLUS_ICON} alt={PLUS_ICON} width={800} height={800} className="w-full"/>
                         </div>
                     </div>
                 </button>
             </h4>
-            {isExpanded ? serviceInfo : <></> }  
+            {isExpanded ? SERVICE_INFO : <></> }  
         </>
     );
 }
