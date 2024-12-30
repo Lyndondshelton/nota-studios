@@ -1,8 +1,7 @@
-'use client';
-// import Link from "next/link";
+import Link from "next/link";
 
 export default function SessionButton(){
-    return <button className="uppercase 
+    const schedulingBtn = <button className="uppercase 
     text-gray-900 
     border 
     border-gray-300 
@@ -21,4 +20,6 @@ export default function SessionButton(){
     dark:hover:bg-gray-700 
     dark:hover:border-gray-600 
     dark:focus:ring-gray-700">Book a session</button>
+
+    return <Link href="/scheduling">{schedulingBtn}</Link>
 }
