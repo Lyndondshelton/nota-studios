@@ -1,12 +1,11 @@
 import ArtistCards from "@/app/components/artist-cards";
+import PageH1 from "@/app/components/global/page-h1";
 import { NOTA_PRIMARY_LOGO } from "@/app/constants/constants";
 
 export default function MeetTheTeam(){
     return(
         <>
-            <div className="w-full my-8 text-center">
-                <h1 className="uppercase">Meet The Team</h1>
-            </div>
+            <PageH1 title="Meet the team"/>
             <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8 px-7">
                 <ArtistCards image="/dyn.jpg"   artist="DYN"   
                     desc="DYN is a songwriter, rapper, singer, producer, photographer, 
