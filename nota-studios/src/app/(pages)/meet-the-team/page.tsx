@@ -1,8 +1,7 @@
-import ArtistCards from "@/app/components/artist-cards"
+import ArtistCards from "@/app/components/artist-cards";
+import { NOTA_PRIMARY_LOGO } from "@/app/constants/constants";
 
 export default function MeetTheTeam(){
-    const defaultImage = "/nota_logo_primary.png";
-
     return(
         <>
             <div className="w-full my-8 text-center">
@@ -30,10 +29,10 @@ export default function MeetTheTeam(){
                     for a number of talented artists, he’s developed a reputation as an 
                     artist of many trades and a passionate collaborator."
                 />
-                <ArtistCards image={defaultImage} artist="Zylyny"
+                <ArtistCards image={NOTA_PRIMARY_LOGO} artist="Zylyny"
                     desc="The latest member of NOTA Collective and NOTA Studios."
                 />
             </div>
         </>
-    )
+    );
 }
