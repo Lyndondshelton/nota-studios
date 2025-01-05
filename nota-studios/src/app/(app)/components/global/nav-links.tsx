@@ -20,6 +20,9 @@ export default function NavLinks(){
             <div className="mx-1">
                 <Link href="/scheduling" className={clsx({'underline':pathname==='/scheduling'})}>SCHEDULING</Link>
             </div>
+            <div className="mx-1">
+                <Link href="/the-prod-blog" className={clsx({'underline':pathname==='/the-prod-blog'})}>THE PROD BLOG</Link>
+            </div>
         </>
     );
 }

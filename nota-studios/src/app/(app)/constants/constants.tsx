@@ -55,7 +55,9 @@ export const STUDIO_EQUIPMENT =[
 //Images
 export const NOTA_PRIMARY_LOGO = "/nota_logo_primary.png";
 export const NOTA_LANDING_LOGO = "/nota_logo_landing.png";
-export const PLUS_ICON = "/plus-svgrepo-com.svg"
+export const PLUS_ICON = "/plus-svgrepo-com.svg";
+export const CROSS_ICON = "/cross.svg";
+export const MENU_ICON = "/menu-duo-md.svg";
 
 //Components
 export const BOOKING_BTN = <button className="uppercase 
