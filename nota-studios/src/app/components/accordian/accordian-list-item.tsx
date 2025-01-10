@@ -8,8 +8,9 @@ export default function AccordianItem(props){
         <div className="p-4 last:border-b-2">
             <p className="whitespace-pre-line">{props.serviceDesc}</p>
             <br />
-            <p className="whitespace-pre-line">{props.servicePrice}</p>
+            <p className="whitespace-pre-line font-bold">{props.servicePrice}</p>
             <br />
+            { props.serviceSubDesc && (<p className="whitespace-pre-line">{props.serviceSubDesc}</p> )}
         </div>;
 
     const [isExpanded, setExpanded] = useState(false);
