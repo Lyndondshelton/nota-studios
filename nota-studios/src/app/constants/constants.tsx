@@ -19,6 +19,10 @@ export const NAV_LINKS = [
         name: "MEET THE TEAM",
         path: "/meet-the-team"
     },
+    {
+        name: "SCHEDULING",
+        path: "/scheduling"
+    },
 ]
 
 export const APP_URLS = [
