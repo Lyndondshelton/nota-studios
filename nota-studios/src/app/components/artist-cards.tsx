@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function ArtistCards(props){
     return(
-        <>
         <div className="flex flex-col">
             <div className="w-full aspect-square relative">
                 <Image 
@@ -15,6 +14,5 @@ export default function ArtistCards(props){
             <h3>{props.artist}</h3>
             <p>{props.desc}</p>
         </div>
-        </>
     );
 }
