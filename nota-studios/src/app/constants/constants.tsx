@@ -26,10 +26,10 @@ export const NAV_LINKS = [
 ]
 
 export const APP_URLS = [
-    {url:"https://www.notacollectivestore.com/", name:"Merch"},
-    {url: "https://www.instagram.com/notastudios.pgh/", name: "Instagram"},
-    {url: "https://traktra.in/notastudios.pgh", name: "Beat Store"},
-    {url: "mailto:notastudios.pgh@gmail.com?bcc=dyn.theartist%40gmail.com&subject=NOTA Studios Inquiry", name: "notastudios.pgh@gmail.com"}
+    {url:"https://www.notacollectivestore.com/", name:"Merch", target:"_blank"},
+    {url: "https://www.instagram.com/notastudios.pgh/", name: "Instagram", target:"_blank"},
+    {url: "https://traktrain.com/notastudios.pgh", name: "Beat Store", target:"_blank"},
+    {url: "mailto:notastudios.pgh@gmail.com?cc=dyn.theartist@gmail.com&subject=NOTA%20Studios%20Inquiry&body=Name%2FArtist%20Name%3A%20%0A%0AService(s)%20needed%3A%20%0A%0APlease%20tell%20us%20more%3A%20", name: "notastudios.pgh@gmail.com", target:"_self"}
 ];
 
 export const SERVICES_LIST = [
@@ -107,7 +107,7 @@ export const ARTIST_LIST = [
     {
         artistName: "Zylyny",
         imgPath:    NOTA_PRIMARY_LOGO,
-        // imgPath: "zylyny.jpg",
+        // imgPath: "/zylyny.jpg",
         artistBio:  "The latest member of NOTA Collective and NOTA Studios."
     },
 ]
