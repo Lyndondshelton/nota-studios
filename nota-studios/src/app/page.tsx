@@ -9,7 +9,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col justify-center px-7 lg:flex-row">
         <div id="pageDesc" className="w-full lg:w-3/4 ">
-          <h2 className="mb-8 font-extrabold uppercase text-center lg:text-left">Like none of the above</h2>
+          <h2 className="mt-4 mb-8 font-extrabold uppercase text-center lg:text-left">Like none of the above</h2>
           <p className="sqsrte-large my-4 break-words uppercase">
             NONE OF THE ABOVE STUDIOS IS A RECORDING STUDIO LOCATED IN 
             TURTLE CREEK, PA.

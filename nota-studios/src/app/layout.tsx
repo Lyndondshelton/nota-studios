@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NOTA Studios PGH",
+  title: "NOTA Studios",
   description: "The official website of None Of The Above Studios in Pittsburgh, PA.",
 };
 
