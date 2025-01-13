@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from 'clsx';
-import { NAV_LINKS } from "@/app/constants/constants";
+import { NAV_LINKS } from "../../constants/constants";
 
 export default function NavLinks(){
     const pathname = usePathname();
