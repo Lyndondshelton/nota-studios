@@ -1,5 +1,5 @@
 //Images
-export const NOTA_PRIMARY_LOGO = "/nota_logo_primary.png";
+export const NOTA_PRIMARY_LOGO = "/nota_logo_primary-transp.png";
 export const NOTA_LANDING_LOGO = "/nota_logo_landing.png";
 export const PLUS_ICON = "/plus-svgrepo-com.svg";
 export const MENU_ICON = "/menu-duo-md.svg";
@@ -86,7 +86,7 @@ export const ARTIST_LIST = [
         artistBio:  "DYN is a songwriter, rapper, singer, producer, photographer, he began making music in high school, " 
                   + "forming numerous connections in the local music scene. With a decade of production experience under "
                   + "his belt, he’s set out to transform the underground music scene in the greater Pittsburgh area. ",
-        socialLink: "",
+        socialLink: "https://linktr.ee/dyntheartist",
     },
     {
         artistName: "CHUCK!",
@@ -95,7 +95,7 @@ export const ARTIST_LIST = [
                     +"engineer. Coming to NOTA studios with years of prior studio experience, "
                     +"he has an ear for hits and a passion for his craft that sets him apart "
                     +"from the rest.",
-        socialLink:"",
+        socialLink:"https://linktr.ee/charles_anthony",
     },
     {
         artistName: "ABSNT",
@@ -105,13 +105,13 @@ export const ARTIST_LIST = [
                     +"his own from top to bottom in his home studio, to engineering projects "
                     +"for a number of talented artists, he’s developed a reputation as an "
                     +"artist of many trades and a passionate collaborator.",
-        socialLink:"",
+        socialLink:"https://linktr.ee/ABSNT",
     },
     {
         artistName: "Zylyny",
         imgPath: "/zylyny.jpg",
         artistBio:  "The latest member of NOTA Collective and NOTA Studios.",
-        socialLink:"",
+        socialLink:"https://www.instagram.com/zylynymusic/",
     },
 ]
 
