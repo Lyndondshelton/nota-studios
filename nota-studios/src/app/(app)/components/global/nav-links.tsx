@@ -2,27 +2,22 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from 'clsx';
+import { NAV_LINKS } from "@/app/constants/constants";
 
 export default function NavLinks(){
     const pathname = usePathname();
 
     return(
         <>
-            <div className="mx-1">
-                <Link href="/" className={clsx({'underline':pathname==='/'})}>HOME</Link>
-            </div>
-            <div className="mx-1">
-                <Link href="/services" className={clsx({'underline':pathname==='/services'})}>SERVICES</Link>
-            </div>
-            <div className="mx-1">
-                <Link href="/meet-the-team" className={clsx({'underline':pathname==='/meet-the-team'})}>MEET THE TEAM</Link>
-            </div>
-            <div className="mx-1">
-                <Link href="/scheduling" className={clsx({'underline':pathname==='/scheduling'})}>SCHEDULING</Link>
-            </div>
-            <div className="mx-1">
-                <Link href="/the-prod-blog" className={clsx({'underline':pathname==='/the-prod-blog'})}>THE PROD BLOG</Link>
-            </div>
+            {
+                NAV_LINKS.map((link, index) => (
+                    <div key={index}>
+                        <div className="mx-1">
+                            <Link href={link.path} className={clsx( {'underline':pathname===link.path} )}>{link.name}</Link>
+                        </div>
+                    </div>
+                ))
+            }
         </>
     );
 }
