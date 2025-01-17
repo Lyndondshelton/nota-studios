@@ -13,7 +13,8 @@ export default function MeetTheTeam(){
                             key={artist.artistName} 
                             image={artist.imgPath} 
                             artist={artist.artistName} 
-                            desc={artist.artistBio}/>
+                            desc={artist.artistBio}
+                            link={artist.socialLink}/>
                     ))
                 }
             </div>

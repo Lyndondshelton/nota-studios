@@ -1,6 +1,7 @@
 import Image from "next/image"
-import { NOTA_PRIMARY_LOGO } from "@/app/(app)/constants/constants";
+import { NOTA_PRIMARY_LOGO } from "../../constants/constants";
 
 export default function HeaderLogo(){
-    return <Image src={NOTA_PRIMARY_LOGO} alt={NOTA_PRIMARY_LOGO} height="118" width="118" className=""/>;
+    const LOGO_SIZE = "118";
+    return <Image src={NOTA_PRIMARY_LOGO} alt={NOTA_PRIMARY_LOGO} height={LOGO_SIZE} width={LOGO_SIZE} className=""/>;
 }
