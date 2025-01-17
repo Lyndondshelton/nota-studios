@@ -1,5 +1,5 @@
 //Images
-export const NOTA_PRIMARY_LOGO = "/nota_logo_primary.png";
+export const NOTA_PRIMARY_LOGO = "/nota_logo_primary-transp.png";
 export const NOTA_LANDING_LOGO = "/nota_logo_landing.png";
 export const PLUS_ICON = "/plus-svgrepo-com.svg";
 export const MENU_ICON = "/menu-duo-md.svg";
@@ -26,10 +26,10 @@ export const NAV_LINKS = [
 ]
 
 export const APP_URLS = [
-    {url:"https://www.notacollectivestore.com/", name:"Merch"},
-    {url: "https://www.instagram.com/notastudios.pgh/", name: "Instagram"},
-    {url: "https://traktra.in/notastudios.pgh", name: "Beat Store"},
-    {url: "mailto:notastudios.pgh@gmail.com?bcc=dyn.theartist%40gmail.com&subject=NOTA Studios Inquiry", name: "notastudios.pgh@gmail.com"}
+    {url:"https://www.notacollectivestore.com/", name:"Merch", target:"_blank"},
+    {url: "https://www.instagram.com/notastudios.pgh/", name: "Instagram", target:"_blank"},
+    {url: "https://traktrain.com/notastudios.pgh", name: "Beat Store", target:"_blank"},
+    {url: "mailto:notastudios.pgh@gmail.com?cc=dyn.theartist@gmail.com&subject=NOTA%20Studios%20Inquiry&body=Name%2FArtist%20Name%3A%20%0A%0AService(s)%20needed%3A%20%0A%0APlease%20tell%20us%20more%3A%20", name: "notastudios.pgh@gmail.com", target:"_self"}
 ];
 
 export const SERVICES_LIST = [
@@ -85,7 +85,8 @@ export const ARTIST_LIST = [
         imgPath:    "/dyn.jpg",
         artistBio:  "DYN is a songwriter, rapper, singer, producer, photographer, he began making music in high school, " 
                   + "forming numerous connections in the local music scene. With a decade of production experience under "
-                  + "his belt, he’s set out to transform the underground music scene in the greater Pittsburgh area. "
+                  + "his belt, he’s set out to transform the underground music scene in the greater Pittsburgh area. ",
+        socialLink: "https://linktr.ee/dyntheartist",
     },
     {
         artistName: "CHUCK!",
@@ -93,7 +94,8 @@ export const ARTIST_LIST = [
         artistBio:  "CHUCK! is a songwriter, rapper, singer, producer, and audio "
                     +"engineer. Coming to NOTA studios with years of prior studio experience, "
                     +"he has an ear for hits and a passion for his craft that sets him apart "
-                    +"from the rest."
+                    +"from the rest.",
+        socialLink:"https://linktr.ee/charles_anthony",
     },
     {
         artistName: "ABSNT",
@@ -102,13 +104,14 @@ export const ARTIST_LIST = [
                     +"rapper, producer, and audio engineer. Between creating albums of "
                     +"his own from top to bottom in his home studio, to engineering projects "
                     +"for a number of talented artists, he’s developed a reputation as an "
-                    +"artist of many trades and a passionate collaborator."
+                    +"artist of many trades and a passionate collaborator.",
+        socialLink:"https://linktr.ee/ABSNT",
     },
     {
         artistName: "Zylyny",
-        imgPath:    NOTA_PRIMARY_LOGO,
-        // imgPath: "zylyny.jpg",
-        artistBio:  "The latest member of NOTA Collective and NOTA Studios."
+        imgPath: "/zylyny.jpg",
+        artistBio:  "The latest member of NOTA Collective and NOTA Studios.",
+        socialLink:"https://www.instagram.com/zylynymusic/",
     },
 ]
 

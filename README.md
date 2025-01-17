@@ -1,6 +1,7 @@
-Main code for NOTA Studios website it located in nota-studios/nota-studios. Code is deployed through Vercel and is hosted at the following locations:
+Main code for NOTA Studios website is located in nota-studios/nota-studios. This is a Next.js app and is deployed through Vercel.
 
-Production Environment - [nota-studios.vercel.app](https://nota-studios.vercel.app)
+The web app is hosted at the following locations:
+Production Environment - [notastudiospgh.com](https://notastudiospgh.com)
 Testing Environment    - [tenv-nota-studios.vercel.app](https://tenv-nota-studios.vercel.app)
 
 Coding changes will take place in "coding branches" with the following naming convention: _"B-123456"_ and should be created from branch _main_ and no other branch. 
@@ -12,11 +13,8 @@ All new coding changes should be pushed to the repository in the following order
 
 
 Knowledge Base   - [Evernote](https://evernote.com/)
-Component Design - [Figma](https://www.figma.com/)
-Auth App         - [Clerk](https://clerk.com/nextjs-authentication)
 Transactions     - [Stripe](https://docs.stripe.com/api)
     Beat Store   - [Vercel](https://vercel.com/templates/next.js/nextjs-commerce)
                  - [Howler.js](https://howlerjs.com/)
-File Handling    - [AmazonS3](https://aws.amazon.com/s3/?nc=sn&loc=1)
 Scheduling       - [Calendly](https://calendly.com/)
-CMS              - [Strapi](https://strapi.io/)
+CMS              - [Payload CMS](https://payloadcms.com/)
