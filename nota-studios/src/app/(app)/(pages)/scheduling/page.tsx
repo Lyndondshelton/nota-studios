@@ -1,13 +1,11 @@
 'use client';
 import { InlineWidget } from "react-calendly"
+import PageH1 from "../../components/global/page-h1";
 
 export default function Scheduling(){
     return(
         <>
-            <div className="w-full my-8 text-center">
-                <h1 className="uppercase mb-8">Scheduling</h1>
-            </div>
-
+            <PageH1 title="Scheduling"/>
             <InlineWidget 
                     url="https://calendly.com/notastudiosapp/notastudios"
                     pageSettings={{

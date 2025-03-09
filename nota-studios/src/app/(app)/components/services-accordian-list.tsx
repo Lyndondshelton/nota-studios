@@ -1,17 +1,27 @@
 import AccordianItem from "./accordian/accordian-list-item";
-import { SERVICES_LIST } from "../constants/constants";
+import { getPayload } from "payload";
+import config from "@/payload.config";
 
-export default function ServicesList(){
+export default async function ServicesList(){
+    const payload = await getPayload({config});
+    const services = await payload.find({
+        collection: 'services'
+    });
+
+    const sortedServices = services.docs.sort((a, b) => b.id - a.id);
+    
     return (
         <ul>
-            {SERVICES_LIST.map((service, index) => (
-                <AccordianItem 
-                    key={index} 
-                    serviceName={service.serviceName} 
-                    serviceDesc={service.serviceDesc} 
-                    servicePrice={service.servicePrice}
-                    serviceSubDesc={service.serviceSubDesc}/>
-            ))}
+            {
+                sortedServices.map((service) => (
+                    <AccordianItem 
+                        key={service.id} 
+                        serviceName={service.serviceName} 
+                        serviceDesc={service.serviceDesc} 
+                        servicePrice={service.price}
+                        serviceSubDesc={service.subDesc}/>
+                ))
+            }
         </ul>
     );
 }

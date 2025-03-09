@@ -15,6 +15,8 @@ export interface Config {
     media: Media;
     posts: Post;
     'beats-collection': BeatsCollection;
+    services: Service;
+    artists: Artist;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -25,6 +27,8 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     'beats-collection': BeatsCollectionSelect<false> | BeatsCollectionSelect<true>;
+    services: ServicesSelect<false> | ServicesSelect<true>;
+    artists: ArtistsSelect<false> | ArtistsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -177,6 +181,32 @@ export interface BeatsCollection {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
+  id: number;
+  serviceName: string;
+  serviceDesc: string;
+  price: string;
+  subDesc?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "artists".
+ */
+export interface Artist {
+  id: number;
+  artistName: string;
+  imagePath: string;
+  artistBio: string;
+  socialLink: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -197,6 +227,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'beats-collection';
         value: number | BeatsCollection;
+      } | null)
+    | ({
+        relationTo: 'services';
+        value: number | Service;
+      } | null)
+    | ({
+        relationTo: 'artists';
+        value: number | Artist;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -296,6 +334,30 @@ export interface BeatsCollectionSelect<T extends boolean = true> {
   key?: T;
   scale?: T;
   stems?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services_select".
+ */
+export interface ServicesSelect<T extends boolean = true> {
+  serviceName?: T;
+  serviceDesc?: T;
+  price?: T;
+  subDesc?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "artists_select".
+ */
+export interface ArtistsSelect<T extends boolean = true> {
+  artistName?: T;
+  imagePath?: T;
+  artistBio?: T;
+  socialLink?: T;
   updatedAt?: T;
   createdAt?: T;
 }

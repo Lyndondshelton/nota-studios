@@ -11,6 +11,8 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
 import { Beats } from './collections/Beats'
+import { Services } from './collections/Services'
+import { Artists } from './collections/Artists'
 
 
 const filename = fileURLToPath(import.meta.url)
@@ -27,7 +29,9 @@ export default buildConfig({
     Users, 
     Media, 
     Posts,
-    Beats
+    Beats,
+    Services,
+    Artists,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
