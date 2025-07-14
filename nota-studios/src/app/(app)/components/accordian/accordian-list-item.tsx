@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import { useState } from "react";
-import { PLUS_ICON } from "@/app/constants/constants";
+import { PLUS_ICON } from "@/app/(app)/constants/constants";
 
 export default function AccordianItem(props){
     const SERVICE_INFO = 

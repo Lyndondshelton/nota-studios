@@ -1,7 +1,7 @@
-import ServicesList from "@/app/components/services-accordian-list";
-import PageH1 from "@/app/components/global/page-h1";
-import { STUDIO_HOURS, STUDIO_EQUIPMENT } from "@/app/constants/constants";
-import SessionButton from "@/app/components/book-session-button";
+import ServicesList from "@/app/(app)/components/services-accordian-list";
+import PageH1 from "@/app/(app)/components/global/page-h1";
+import { STUDIO_HOURS, STUDIO_EQUIPMENT } from "@/app/(app)/constants/constants";
+import SessionButton from "@/app/(app)/components/book-session-button";
 
 export default function Services(){
     return(
