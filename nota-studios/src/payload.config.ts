@@ -12,6 +12,7 @@ import { Posts } from './collections/Posts'
 import { Beats } from './collections/Beats'
 import { Services } from './collections/Services'
 import { Artists } from './collections/Artists'
+import { migrations } from './migrations'
 
 
 const filename = fileURLToPath(import.meta.url)
@@ -38,11 +39,9 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
+    prodMigrations: migrations,
     pool: {
       connectionString: process.env.DATABASE_URL || '',
-      ssl: {
-        rejectUnauthorized: false,
-      }
     },
   }),
   sharp,
