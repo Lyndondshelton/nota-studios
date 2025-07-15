@@ -6,9 +6,11 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { migrations } from './migrations'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Artists } from './collections/Artists'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,13 +22,14 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Artists],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
+    prodMigrations: migrations,
     pool: {
       connectionString: process.env.DATABASE_URL || '',
     },
