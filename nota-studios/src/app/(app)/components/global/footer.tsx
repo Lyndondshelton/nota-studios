@@ -1,4 +1,4 @@
-import { APP_URLS } from "@/app/constants/constants";
+import { APP_URLS } from "@/app/(app)/constants/constants";
 
 export default function Footer(){
     return(

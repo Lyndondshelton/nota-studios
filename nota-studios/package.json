@@ -2,18 +2,27 @@
   "name": "nota-studios",
   "version": "0.1.0",
   "private": true,
+  "type":"module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
+    "ci": "payload migrate && npm run build"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.47.0",
+    "@payloadcms/next": "^3.47.0",
+    "@payloadcms/payload-cloud": "^3.47.0",
+    "@payloadcms/richtext-lexical": "^3.47.0",
     "clsx": "^2.1.1",
-    "next": "15.1.2",
-    "react": "^19.0.0",
+    "graphql": "^16.11.0",
+    "next": "^15.3.5",
+    "payload": "^3.47.0",
+    "react": "^19.1.0",
     "react-calendly": "^4.3.1",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.1.0",
     "react-loading-skeleton": "^3.5.0"
   },
   "devDependencies": {
@@ -21,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
     "postcss": "^8",
