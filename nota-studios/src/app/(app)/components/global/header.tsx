@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import HeaderLogo from "./header-logo";
 import NavLinks from "./nav-links";
-import { CROSS_ICON, MENU_ICON } from "@/app/constants/constants";
+import { CROSS_ICON, MENU_ICON } from "@/app/(app)/constants/constants";
 import { usePathname } from "next/navigation";
 
 export default function Header(){

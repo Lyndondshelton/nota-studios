@@ -1,6 +1,6 @@
-import ArtistCards from "@/app/components/artist-cards";
-import PageH1 from "@/app/components/global/page-h1";
-import { ARTIST_LIST } from "@/app/constants/constants";
+import ArtistCards from "@/app/(app)/components/artist-cards";
+import PageH1 from "@/app/(app)/components/global/page-h1";
+import { ARTIST_LIST } from "@/app/(app)/constants/constants";
 
 export default function MeetTheTeam(){
     return(
