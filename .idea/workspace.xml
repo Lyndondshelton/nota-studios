@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7fbc54ad-23d3-4837-9651-53b7ad455acc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/nota-studios/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/absnt.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/absnt.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/chuck.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/chuck.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/cross.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/cross.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/dyn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/dyn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/favicon-for-public/web-app-manifest-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon-for-public/web-app-manifest-192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/favicon-for-public/web-app-manifest-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon-for-public/web-app-manifest-512x512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/file.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/file.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/globe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/globe.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/menu-duo-md.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/menu-duo-md.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/next.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/nota_logo_landing.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/nota_logo_landing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/nota_logo_primary-transp.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/nota_logo_primary-transp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/nota_logo_primary.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/nota_logo_primary.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/plus-svgrepo-com.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/plus-svgrepo-com.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/vercel.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/window.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/window.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/public/zylyny.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/zylyny.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/(pages)/(stores)/beats/beat-store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/(pages)/(stores)/beats/beat-store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/(pages)/(stores)/merch/merch-store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/(pages)/(stores)/merch/merch-store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/(pages)/meet-the-team/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/(pages)/meet-the-team/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/(pages)/scheduling/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/(pages)/scheduling/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/(pages)/scheduling/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/(pages)/scheduling/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/(pages)/services/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/(pages)/services/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/accordian/accordian-list-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/accordian/accordian-list-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/artist-cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/artist-cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/book-session-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/book-session-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/global/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/global/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/global/header-logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/global/header-logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/global/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/global/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/global/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/global/nav-links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/global/page-h1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/global/page-h1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/landing-page-logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/landing-page-logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/components/services-accordian-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/components/services-accordian-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/constants/constants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/constants/constants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/favicon-for-app/apple-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/favicon-for-app/apple-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/favicon-for-app/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/favicon-for-app/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/favicon-for-app/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/favicon-for-app/icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/favicon-for-app/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/favicon-for-app/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(app)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/(app)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/admin/[[...segments]]/not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/admin/[[...segments]]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/admin/importMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/api/[...slug]/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/api/graphql-playground/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/api/graphql/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/custom.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/(payload)/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/app/my-route/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/collections/Artists.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/collections/Media.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/collections/Users.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/migrations/20250714_211535_init.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/migrations/20250714_211535_init.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/migrations/20250715_001248_init_payload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/migrations/20250715_001248_init_payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/migrations/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/payload-types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/src/payload.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nota-studios/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lyndondshelton&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lyndondshelton/nota-studios.git&quot;,
+    &quot;accountId&quot;: &quot;b79abc83-c6f4-4612-a450-f5263116160d&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0027599688095168" />
+      <entry key="MS500" value="1.7830702361481112" />
+      <entry key="S2" value="5.3043600548305925" />
+      <entry key="S5" value="8.363582733643423" />
+      <entry key="S10" value="9.976356329842886" />
+      <entry key="S30" value="12.465937921720117" />
+      <entry key="S60" value="15.622060241591864" />
+      <entry key="M2" value="20.757003185525903" />
+      <entry key="M5" value="37.422845036772635" />
+      <entry key="M10" value="61.26970534147931" />
+      <entry key="M15" value="80.83003862845733" />
+      <entry key="M30" value="139.99892391110956" />
+      <entry key="H1" value="257.36459531223846" />
+      <entry key="H2" value="425.24662970209374" />
+      <entry key="H4" value="726.4531030914017" />
+      <entry key="D1" value="2852.0626611542784" />
+      <entry key="W1" value="4071.5038393897958" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="5.0308047709198105E-109" />
+      <entry key="S5" value="9.328955367125834E-44" />
+      <entry key="S10" value="6.5836673347255685E-22" />
+      <entry key="S30" value="2.7737816326269125E-7" />
+      <entry key="S60" value="0.0013023067790950932" />
+      <entry key="M2" value="0.09271683649756696" />
+      <entry key="M5" value="1.3011284232541545" />
+      <entry key="M10" value="3.56732647309035" />
+      <entry key="M15" value="5.686110422772741" />
+      <entry key="M30" value="12.172801057074274" />
+      <entry key="H1" value="23.47261326336811" />
+      <entry key="H2" value="37.271592990325786" />
+      <entry key="H4" value="53.32184071628038" />
+      <entry key="D1" value="122.07520934466483" />
+      <entry key="W1" value="157.54480483560744" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.022443400919898663" />
+      <entry key="MS500" value="1.2339254553259706" />
+      <entry key="S2" value="5.118658247940556" />
+      <entry key="S5" value="8.282920651453685" />
+      <entry key="S10" value="9.934715976594614" />
+      <entry key="S30" value="12.451339348837156" />
+      <entry key="S60" value="15.614995059426612" />
+      <entry key="M2" value="20.84332348501328" />
+      <entry key="M5" value="38.71443545044478" />
+      <entry key="M10" value="64.82546265203267" />
+      <entry key="M15" value="86.50256889853134" />
+      <entry key="M30" value="152.15226604570958" />
+      <entry key="H1" value="280.81466894773985" />
+      <entry key="H2" value="462.4989354754674" />
+      <entry key="H4" value="779.7606270201069" />
+      <entry key="D1" value="2974.132172132206" />
+      <entry key="W1" value="4229.047587658307" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3G9FKn4fk9ZqtSNWC2aT3oi6FN9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "bugfix/dependency-audit",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/qaz/Documents/GitHub/nota-studios/backend/notastudiosapi/templates/admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "settings.editor.splitter.proportion": "0.11981083",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2026.1.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qaz\Documents\GitHub\nota-studios\backend\notastudiosapi\templates\admin" />
+      <recent name="C:\Users\qaz\Documents\GitHub\nota-studios\backend\notastudiosapi\static\admin\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\qaz\Documents\GitHub\nota-studios\frontend" />
+      <recent name="C:\Users\qaz\Documents\GitHub\nota-studios\backend\notastudiosapi" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fbc54ad-23d3-4837-9651-53b7ad455acc" name="Changes" comment="" />
+      <created>1783375817134</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783375817134</updated>
+      <workItem from="1783375818398" duration="23237000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:react" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:graphql" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:next" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:postcss" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/notastudiosapi/notastudiosapi/urls.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
