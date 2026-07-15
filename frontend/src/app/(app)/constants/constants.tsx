@@ -106,31 +106,8 @@ export const ARTIST_LIST = [
                     +"for a number of talented artists, he’s developed a reputation as an "
                     +"artist of many trades and a passionate collaborator.",
         socialLink:"https://linktr.ee/ABSNT",
-    },
-    {
-        artistName: "Zylyny",
-        imgPath: "/zylyny.jpg",
-        artistBio:  "The latest member of NOTA Collective and NOTA Studios.",
-        socialLink:"https://www.instagram.com/zylynymusic/",
-    },
+    }
 ]
-
-export const STUDIO_HOURS = [
-        {day:"Monday", hours:"4:00PM - 12:00AM"},
-        {day:"Tuesday", hours:"4:00PM - 12:00AM"},
-        {day:"Wednesday", hours:"4:00PM - 12:00AM"},
-        {day:"Thursday", hours:"4:00PM - 12:00AM"},
-        {day:"Friday", hours:"4:00PM - 12:00AM"},
-        {day:"Saturday", hours:"12:00AM - 12:00AM"},
-        {day:"Sunday", hours:"12:00AM - 12:00AM"},
-    ];
-export const STUDIO_EQUIPMENT =[
-        "FL Studios + Pro Tools + Garage Band",
-        'KRK CLASSIC 5" MONITORS',
-        "FOCUSRITE CM25 MKIII CONDENSER MICROPHONE",
-        "SSL 2+ AUDIO INTERFACE",
-        "ALESIS V25 MIDI KEYBOARD"
-    ];
 
 //Components
 export const BOOKING_BTN = <button className="uppercase 

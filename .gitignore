@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-node_modules
+frontend/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -31,8 +31,15 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
+.env
+.env.*
+!.env.example
+backend/.env
 frontend/.env.local
 .venv
+
+#Database files
+*.sqlite3
 
 # vercel
 .vercel
@@ -44,4 +51,3 @@ next-env.d.ts
 #IDE
 .idea
 .ai
-.idea/workspace.xml

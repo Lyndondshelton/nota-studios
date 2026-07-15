@@ -1,16 +1,18 @@
 import AccordianItem from "./accordian/accordian-list-item";
-import { SERVICES_LIST } from "../constants/constants";
+import {getStudioServices} from "@/app/_service/app-api-service";
 
-export default function ServicesList(){
+export default async function ServicesList(){
+    const services = await getStudioServices();
+
     return (
         <ul>
-            {SERVICES_LIST.map((service, index) => (
+            {services.map(service => (
                 <AccordianItem 
-                    key={index} 
-                    serviceName={service.serviceName} 
-                    serviceDesc={service.serviceDesc} 
-                    servicePrice={service.servicePrice}
-                    serviceSubDesc={service.serviceSubDesc}/>
+                    key={service.id}
+                    serviceName={service.name}
+                    serviceDesc={service.desc}
+                    servicePrice={service.price_desc}
+                    serviceSubDesc={service.sub_desc}/>
             ))}
         </ul>
     );
