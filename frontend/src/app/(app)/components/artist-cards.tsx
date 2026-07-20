@@ -6,12 +6,12 @@ export default function ArtistCards(props){
         <div className="flex flex-col">
             <Link href={props.link} target="_blank">
                 <div className="w-full aspect-square relative">
-                    <Image 
-                        className="object-center" 
+                    <Image
                         src={props.image} 
-                        alt={props.image} 
-                        layout="fill"
-                        objectFit="cover"/>
+                        alt={props.image}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover"/>
                 </div>
             </Link>
             <h3>{props.artist}</h3>

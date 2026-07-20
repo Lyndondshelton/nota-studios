@@ -1,20 +1,65 @@
-Main code for NOTA Studios website is located in nota-studios/nota-studios. This is a Next.js app and is deployed through Vercel.
+# NOTA Studios
 
-The web app is hosted at the following locations:
-Production Environment - [notastudiospgh.com](https://notastudiospgh.com)
-Testing Environment    - [tenv-nota-studios.vercel.app](https://tenv-nota-studios.vercel.app)
+The official website for NOTA Studios.  
+The repo is public for devs to copy its architecture for similar projects.
 
-Coding changes will take place in "coding branches" with the following naming convention: _"B-123456"_ and should be created from branch _main_ and no other branch. 
+## Project Overview
+- Public-facing website
+- Artist portfolios
+- Business service listings
+- Business hours
+- Admin dashboard for managing content
+- Media storage through Amazon S3
 
-All new coding changes should be pushed to the repository in the following order:
- 1. Coding Branch _(B-******)_ -> tenv
-    a. Complete dev/qa testing in [Testing Environment](https://tenv-nota-studios.vercel.app)
- 2. tenv -> main
+### Architecture Diagram
+The application uses a Next.js frontend with a Django backend and PostgreSQL database.
+
+Browser  
+│  
+Next.js (Vercel)  
+│  
+REST API  
+|  
+Django  
+├─────────────► PostgreSQL (Neon)  
+└─────────────► Amazon S3  
+
+### Why Django?
+- Built-in admin interface
+- Object-Relational Mapping
+- Widely used backend framework; Large set of libraries and third party plugins available
+
+### Why Next.js?
+- React ecosystem
+- Server Components
+- Vercel integration
+
+### Why PostgreSQL?
+- Production-ready
+- Better concurrency
+- Cloud hosted
+
+### Why Amazon S3?
+- Durable object storage
+- Keeps application stateless
+- Low cost ~$0.02/GB
+
+### Project Structure
+- backend/  
+  - Django REST API
+  - Business logic
+  - Database models
+  - Admin CMS
+- frontend/
+  - Next.js application
+  - React components
+  - Server-side rendering
 
 
-Knowledge Base   - [Evernote](https://evernote.com/)
-Transactions     - [Stripe](https://docs.stripe.com/api)
-    Beat Store   - [Vercel](https://vercel.com/templates/next.js/nextjs-commerce)
-                 - [Howler.js](https://howlerjs.com/)
-Scheduling       - [Calendly](https://calendly.com/)
-CMS              - [Payload CMS](https://payloadcms.com/)
+## Prerequisites
+
+- Python 3.14+
+- Node.js 24+
+- AWS CLI
+- Neon for PostgreSQL
+

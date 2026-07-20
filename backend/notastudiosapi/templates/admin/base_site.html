@@ -1,0 +1,32 @@
+{% extends "admin/base.html" %}
+<!--Custom CSS-->
+{% block extrastyle %}{{ block.super }}
+<style>
+    html[data-theme="light"], :root {
+        --primary: #F00;
+        --secondary: #000;
+        --accent: #FFF;
+        /*--header-branding-color: var(--accent);*/
+        --breadcrumbs-bg: var(--primary);
+        --link-fg: var(--primary);
+        --link-selected-fg: var(--accent);
+    }
+    html[data-theme="dark"], :root {
+        --primary: rgb(255 0 0 / 0.5);
+        --secondary: #AA0000;
+        --link-fg: #f00;
+        --link-selected-fg: #fff;
+        --accent: #000;
+    }
+</style>
+{% endblock %}
+
+<!--Custom HTML Elements-->
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('NOTA Studios | Admin') }}{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('NOTA Studios | Admin') }}</a></div>
+{% if user.is_anonymous %}
+    {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
