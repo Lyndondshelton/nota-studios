@@ -1,6 +1,8 @@
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
+const apiBaseUrl = process.env.API_BASE_URL
 import {CommonApiResponse} from "@/app/_service/_constants/responses";
 import {StudioEquipment, ServiceSchedule, Artist, Service} from "@/app/_service/_constants/data-types";
+
+console.log("API Base URL from .env, ", apiBaseUrl);
 
 export async function getStudioServices(): Promise<Service[]>{
     const response = await fetch(`${ apiBaseUrl }/studio-services/`,

@@ -1,0 +1,10 @@
+Dockerfile
+.env
+.env.*
+node_modules/
+.next/
+.vercel/
+*.log
+.git/
+.gitignore
+coverage/

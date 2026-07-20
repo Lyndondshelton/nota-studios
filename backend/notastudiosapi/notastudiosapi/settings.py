@@ -16,6 +16,7 @@ from urllib.parse import urlparse, parse_qsl
 #--Neon end--
 
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,14 +28,18 @@ load_dotenv(BASE_DIR.parent / ".env.backend")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+# vars
+# Used when the backend/Dockerfile is built; manage.py functions require settings.py to be available
+IS_BUILDING_DOCKER_IMAGE =os.getenv("DJANGO_BUILD", "").lower() == "true"
 
-if not SECRET_KEY:
-    raise RuntimeError("SECRET_KEY is not configured. Add it to backend/.env.backend")
+
+# SECURITY WARNING: keep the secret key used in production secret!
+# Random secret key is used during Docker build, else use the secret key in .env.backend
+SECRET_KEY = os.getenv("SECRET_KEY", default=get_random_secret_key())
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Modify the DEBUG field in .env.backend. Use 'True' for local dev.
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 
@@ -54,10 +59,7 @@ ALLOWED_HOSTS = allowed_hosts
 
 
 # Get CORS Allowed Origins from environment
-cors_origins_value = os.getenv(
-    "CORS_ALLOWED_ORIGINS",
-    "http://localhost:3000"
-)
+cors_origins_value = os.getenv("CORS_ALLOWED_ORIGINS","")
 
 CORS_ALLOWED_ORIGINS = []
 
@@ -87,15 +89,8 @@ INSTALLED_APPS = [
 ]
 
 
-aws_bucket_name = os.getenv("AWS_STORAGE_BUCKET_NAME")
-aws_region_name = os.getenv("AWS_S3_REGION_NAME")
-
-if not aws_bucket_name:
-    raise RuntimeError("AWS_STORAGE_BUCKET_NAME is not configured. Add it in backend/.env")
-
-
-if not aws_region_name:
-    raise RuntimeError("AWS_S3_REGION_NAME is not configured. Add it in backend/.env")
+aws_bucket_name = 'notastudios-s3-bucket'
+aws_region_name = 'us-east-2'
 
 
 STORAGES = {
@@ -112,13 +107,14 @@ STORAGES = {
         },
     },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -149,31 +145,39 @@ WSGI_APPLICATION = 'notastudiosapi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
-# Replace the DATABASES section of your settings.py with this
-database_url = os.getenv("DATABASE_URL")
-
-if not database_url:
-    raise RuntimeError("DATABASE_URL is not configured. Add it to backend/.env.backend")
-
-
-postgres = urlparse(database_url)
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        "NAME": postgres.path.lstrip("/"),
-        'USER': postgres.username,
-        'PASSWORD': postgres.password,
-        'HOST': postgres.hostname,
-        "PORT": postgres.port or 5432,
-        'OPTIONS': dict(parse_qsl(postgres.query)),
-    },
-    'sqlite': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db-backup.sqlite3',
+if IS_BUILDING_DOCKER_IMAGE:
+    # Use SQL Lite as default when running Docker build
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db-backup.sqlite3',
+        }
     }
-}
+else:
+    # Set DATABASE_URL in .env
+    database_url = os.getenv("DATABASE_URL")
+
+    if not database_url:
+        raise RuntimeError("DATABASE_URL is not configured. Add it to backend/.env.backend")
+
+
+    postgres = urlparse(database_url)
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            "NAME": postgres.path.lstrip("/"),
+            'USER': postgres.username,
+            'PASSWORD': postgres.password,
+            'HOST': postgres.hostname,
+            "PORT": postgres.port or 5432,
+            'OPTIONS': dict(parse_qsl(postgres.query)),
+        },
+        'sqlite': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db-backup.sqlite3',
+        }
+    }
 
 
 # Password validation
@@ -210,5 +214,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL ='/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
