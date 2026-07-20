@@ -1,0 +1,171 @@
+[
+{
+  "model": "appapi.serviceschedule",
+  "pk": 0,
+  "fields": {
+    "start_time": "18:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.serviceschedule",
+  "pk": 1,
+  "fields": {
+    "start_time": "18:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.serviceschedule",
+  "pk": 2,
+  "fields": {
+    "start_time": "18:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.serviceschedule",
+  "pk": 3,
+  "fields": {
+    "start_time": "18:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.serviceschedule",
+  "pk": 4,
+  "fields": {
+    "start_time": "18:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.serviceschedule",
+  "pk": 5,
+  "fields": {
+    "start_time": "00:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.serviceschedule",
+  "pk": 6,
+  "fields": {
+    "start_time": "00:00:00",
+    "end_time": "00:00:00"
+  }
+},
+{
+  "model": "appapi.service",
+  "pk": 1,
+  "fields": {
+    "name": "Mixing + Mastering",
+    "description": "Get professional mixing and mastering from the comfort of your own space. Our expert engineers will work remotely to bring your tracks to life, ensuring top-quality sound and industry-ready results.  \r\n\r\nSend us your stems, and we’ll handle the rest—delivering polished, radio-ready tracks without the need to be in the studio.",
+    "sub_description": "",
+    "price_desc": "Mixing - $100 per song  \r\nMastering - $100 per song Bundle  \r\n(Mixing & Mastering) - $150 per song"
+  }
+},
+{
+  "model": "appapi.service",
+  "pk": 2,
+  "fields": {
+    "name": "Production",
+    "description": "Looking for a unique, high-quality beat? Let us craft one for you from scratch. We’ll work closely with you to capture your vision, creating a fully mixed and mastered beat that’s ready for you to use.  \r\n\r\nYour sound, your style—brought to life with professional production.",
+    "sub_description": "Additionally, explore our Traktrain page for pre-made beats.",
+    "price_desc": "Lease: $50  \r\nExclusive License: $100"
+  }
+},
+{
+  "model": "appapi.service",
+  "pk": 3,
+  "fields": {
+    "name": "Graphic Design",
+    "description": "Bring your vision to life with custom graphic design for any of your music-related needs. From eye-catching album cover art and promotional flyers to unique artist logos, we provide creative designs that capture your style and message.  \r\n\r\nLet’s create something memorable for your brand!",
+    "sub_description": "",
+    "price_desc": "Pricing starts at $50, with rates varying based on the complexity and scope of each project."
+  }
+},
+{
+  "model": "appapi.service",
+  "pk": 4,
+  "fields": {
+    "name": "Photography",
+    "description": "Elevate your image with professional photography. From promotional photos and album artwork to behind-the-scenes shots and event coverage, we specialize in creating visuals that showcase your unique style and personality.",
+    "sub_description": "",
+    "price_desc": "Hourly Rate: $50  \r\nEvent Coverage: $300"
+  }
+},
+{
+  "model": "appapi.studioequipment",
+  "pk": 1,
+  "fields": {
+    "name": "DAWs",
+    "description": "FL Studios + Pro Tools + Garage Band"
+  }
+},
+{
+  "model": "appapi.studioequipment",
+  "pk": 2,
+  "fields": {
+    "name": "Studio Monitors",
+    "description": "KRK CLASSIC 5 MONITORS"
+  }
+},
+{
+  "model": "appapi.studioequipment",
+  "pk": 3,
+  "fields": {
+    "name": "Microphone",
+    "description": "FOCUSRITE CM25 MKIII CONDENSER MICROPHONE"
+  }
+},
+{
+  "model": "appapi.studioequipment",
+  "pk": 4,
+  "fields": {
+    "name": "Audio Interface",
+    "description": "SSL 2+ AUDIO INTERFACE"
+  }
+},
+{
+  "model": "appapi.studioequipment",
+  "pk": 5,
+  "fields": {
+    "name": "Midi Controllers",
+    "description": "ALESIS V25 MIDI KEYBOARD"
+  }
+},
+{
+  "model": "appapi.artist",
+  "pk": 1,
+  "fields": {
+    "artist_name": "DYN",
+    "featured_image": "imgs/artists/DYN_artist_photo.jpg",
+    "featured_image_alt": "DYN_artist_photo",
+    "artist_bio": "DYN is a songwriter, rapper, singer, producer, photographer, he began making music in high school, forming numerous connections in the local music scene. With a decade of production experience under his belt, he’s set out to transform the underground music scene in the greater Pittsburgh area.",
+    "social_link": "https://linktr.ee/dyntheartist"
+  }
+},
+{
+  "model": "appapi.artist",
+  "pk": 2,
+  "fields": {
+    "artist_name": "CHUCK!",
+    "featured_image": "imgs/artists/chuck.jpg",
+    "featured_image_alt": "chuck,jpg",
+    "artist_bio": "CHUCK! is a songwriter, rapper, singer, producer, and audio engineer. Coming to NOTA studios with years of prior studio experience, he has an ear for hits and a passion for his craft that sets him apart from the rest.",
+    "social_link": "https://linktr.ee/charles_anthony"
+  }
+},
+{
+  "model": "appapi.artist",
+  "pk": 3,
+  "fields": {
+    "artist_name": "ABSNT",
+    "featured_image": "imgs/artists/absnt.jpg",
+    "featured_image_alt": "/absnt.jpg",
+    "artist_bio": "ABSNT is a multimedia artist, graphic designer, songwriter, rapper, producer, and audio engineer. Between creating albums of his own from top to bottom in his home studio, to engineering projects for a number of talented artists, he’s developed a reputation as an artist of many trades and a passionate collaborator.",
+    "social_link": "https://absnt.net/"
+  }
+}
+]
