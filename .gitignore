@@ -12,6 +12,9 @@ frontend/node_modules
 
 # testing
 /coverage
+.coverage/
+.pytest_cache/
+
 
 # next.js
 .next
@@ -23,6 +26,8 @@ frontend/node_modules
 # misc
 .DS_Store
 *.pem
+staticfiles/
+media/
 
 # debug
 npm-debug.log*

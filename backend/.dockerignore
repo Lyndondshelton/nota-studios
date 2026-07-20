@@ -1,0 +1,10 @@
+.env.backend
+.venv/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+db-backup.sqlite3
+.git/
+.gitignore
+Dockerfile
