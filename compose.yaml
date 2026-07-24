@@ -15,6 +15,7 @@ services:
       context: ./frontend
     environment:
       API_BASE_URL: http://backend:8000/api
+      WATCHPACK_POLLING: true
     ports:
       - "3000:3000"
     volumes:
