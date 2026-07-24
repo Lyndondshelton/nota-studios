@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -36,7 +37,7 @@ class StudioEquipment(models.Model):
 
 
 class Artist(models.Model):
-    artist_name = models.CharField(max_length = 100)
+    artist_name = models.CharField(max_length=100)
     featured_image = models.ImageField(
         upload_to="imgs/artists/",
         blank=True,
@@ -50,3 +51,37 @@ class Artist(models.Model):
     social_link = models.CharField(max_length=255)
     def __str__(self):
         return self.artist_name
+
+
+class Track(models.Model):
+    title = models.CharField(max_length=50)
+    artist = models.CharField(max_length=50)
+    description = models.TextField(
+        max_length=500,
+        default="Recorded, Mixed & Mastered - NOTA Studios, Pittsburgh, PA",
+        blank=True,
+        null=True,
+    );
+    audio_file = models.FileField(
+        upload_to="audio/music/",
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=["mp3", "wav"]
+            )
+        ],
+    )
+    album_art = models.ImageField(
+        upload_to="audio/artwork/",
+        blank=True,
+        null=True,
+    )
+    release_date = models.DateField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    is_published = models.BooleanField(default=False)
+
+    class Meta:
+        ordering=["-release_date"]
+
+
+    def __str__(self):
+        return self.title

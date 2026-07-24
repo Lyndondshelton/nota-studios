@@ -27,3 +27,13 @@ export type Artist = {
     featured_image_alt: string;
     social_link: string;
 }
+
+export type Music = {
+    id: number;
+    title: string;
+    artist: string;
+    description: string | null;
+    audio_url: string;
+    album_art: string;
+    is_published: boolean;
+}

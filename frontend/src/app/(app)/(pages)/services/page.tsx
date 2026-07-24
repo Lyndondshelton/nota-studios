@@ -9,7 +9,6 @@ export default async function Services(){
     const studioEquipment = await getStudioEquipmentList();
     const studioHours = await getServiceSchedule();
 
-    console.log("Fetched studio hours schedule: ", studioHours)
     return(
         <>
             <PageH1 title="Services"/>
