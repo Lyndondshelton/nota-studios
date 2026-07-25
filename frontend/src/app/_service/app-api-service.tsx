@@ -1,6 +1,6 @@
 const apiBaseUrl = process.env.API_BASE_URL
 import {CommonApiResponse} from "@/app/_service/_constants/responses";
-import {StudioEquipment, ServiceSchedule, Artist, Service} from "@/app/_service/_constants/data-types";
+import {StudioEquipment, ServiceSchedule, Artist, Service, Music} from "@/app/_service/_constants/data-types";
 
 console.log("API Base URL from .env, ", apiBaseUrl);
 
@@ -56,4 +56,18 @@ export async  function getArtistList(): Promise<Artist[]>{
     const result: CommonApiResponse<Artist[]> = await response.json()
 
     return result.data
+}
+
+export async function getMusicList(): Promise<Music[]> {
+    const response = await fetch(`${apiBaseUrl}/music-list/`, {
+        cache: "no-store"
+    });
+
+    if(!response.ok){
+        throw new Error("Failed to fetch Music List from API.")
+    }
+
+    const result: CommonApiResponse<Music[]> = await response.json();
+
+    return result.data;
 }

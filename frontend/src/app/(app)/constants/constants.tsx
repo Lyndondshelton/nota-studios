@@ -1,9 +1,13 @@
 //Images
 export const NOTA_PRIMARY_LOGO = "/nota_logo_primary-transp.png";
+export const NOTA_DEFAULT_LOGO = "/nota_logo_primary.png";
 export const NOTA_LANDING_LOGO = "/nota_logo_landing.png";
 export const PLUS_ICON = "/plus-svgrepo-com.svg";
 export const MENU_ICON = "/menu-duo-md.svg";
 export const CROSS_ICON = "/cross.svg";
+export const PLAY_BUTTON = "/flaticon_com/play-buttton.png";
+export const PAUSE_BUTTON = "/flaticon_com/pause.png";
+export const ALBUM_ART_EX = "/imgs/album-art/random_album_cover.jpg"
 
 //data
 export const NAV_LINKS = [
@@ -23,6 +27,16 @@ export const NAV_LINKS = [
         name: "SCHEDULING",
         path: "/scheduling"
     },
+    {
+        name: "RELEASES",
+        path: "/releases"
+    },
+    // {
+    //     name: "MERCH STORE",
+    //     path: "/merch"
+    // }
+
+
 ]
 
 export const APP_URLS = [
@@ -31,83 +45,6 @@ export const APP_URLS = [
     {url: "https://traktrain.com/notastudios.pgh", name: "Beat Store", target:"_blank"},
     {url: "mailto:notastudios.pgh@gmail.com?cc=dyn.theartist@gmail.com&subject=NOTA%20Studios%20Inquiry&body=Name%2FArtist%20Name%3A%20%0A%0AService(s)%20needed%3A%20%0A%0APlease%20tell%20us%20more%3A%20", name: "notastudios.pgh@gmail.com", target:"_self"}
 ];
-
-export const SERVICES_LIST = [
-        {
-            serviceName: "Recording Sessions",
-            serviceDesc: "Bring your music to life in our professional recording studio. Whether you're a "
-                        +"seasoned artist or stepping into the booth for the first time, our experienced " 
-                        +"engineers are here to guide you every step of the way. We specialize in delivering "
-                        +"crystal-clear vocal recordings and polished mixes that match industry standards. "
-                        +"\n\nWork in a creative, comfortable environment where your best performances shine. "
-                        +"Let's collaborate to achieve the sound you’ve envisioned.",
-            servicePrice: "Rates: $50 per hour",
-        },
-        {
-            serviceName: "Mixing + Mastering",
-            serviceDesc: "Get professional mixing and mastering from the comfort of your own space. Our expert "
-                        +"engineers will work remotely to bring your tracks to life, ensuring top-quality sound "
-                        +"and industry-ready results. "
-                        +"\n\nSend us your stems, and we’ll handle the rest—delivering polished, radio-ready tracks "
-                        +"without the need to be in the studio.",
-            servicePrice: "Mixing - $100 per song\nMastering - $100 per song\nBundle (Mixing & Mastering) - $150 per song"
-        },
-        {
-            serviceName: "Production",
-            serviceDesc: "Looking for a unique, high-quality beat? Let us craft one for you from scratch. We’ll "
-                        +"work closely with you to capture your vision, creating a fully mixed and mastered beat "
-                        +"that’s ready for you to use. "
-                        +"\n\nYour sound, your style—brought to life with professional production. ",
-            servicePrice: "Lease: $50\nExclusive License: $100",
-            serviceSubDesc: "Additionally, explore our Traktrain page for pre-made beats."
-        },
-        {
-            serviceName: "Graphic Design",
-            serviceDesc: "Bring your vision to life with custom graphic design for any of your music-related needs. "
-                        +"From eye-catching album cover art and promotional flyers to unique artist logos, we provide "
-                        +"creative designs that capture your style and message."
-                        +"\n\nLet’s create something memorable for your brand!",
-            servicePrice: "Pricing starts at $50, with rates varying based on the complexity and scope of each project."
-        },
-        {
-            serviceName: "Photography",
-            serviceDesc: "Elevate your image with professional photography. From promotional photos and album artwork "
-                        +"to behind-the-scenes shots and event coverage, we specialize in creating visuals that showcase "
-                        +"your unique style and personality.",
-            servicePrice: "Hourly Rate: $50\nEvent Coverage: $300"
-        },
-
-    ];
-
-export const ARTIST_LIST = [
-    {
-        artistName: "DYN",
-        imgPath:    "/dyn.jpg",
-        artistBio:  "DYN is a songwriter, rapper, singer, producer, photographer, he began making music in high school, " 
-                  + "forming numerous connections in the local music scene. With a decade of production experience under "
-                  + "his belt, he’s set out to transform the underground music scene in the greater Pittsburgh area. ",
-        socialLink: "https://linktr.ee/dyntheartist",
-    },
-    {
-        artistName: "CHUCK!",
-        imgPath:    "/chuck.jpg",
-        artistBio:  "CHUCK! is a songwriter, rapper, singer, producer, and audio "
-                    +"engineer. Coming to NOTA studios with years of prior studio experience, "
-                    +"he has an ear for hits and a passion for his craft that sets him apart "
-                    +"from the rest.",
-        socialLink:"https://linktr.ee/charles_anthony",
-    },
-    {
-        artistName: "ABSNT",
-        imgPath:    "/absnt.jpg",
-        artistBio:  "ABSNT is a multimedia artist, graphic designer, songwriter, "
-                    +"rapper, producer, and audio engineer. Between creating albums of "
-                    +"his own from top to bottom in his home studio, to engineering projects "
-                    +"for a number of talented artists, he’s developed a reputation as an "
-                    +"artist of many trades and a passionate collaborator.",
-        socialLink:"https://linktr.ee/ABSNT",
-    }
-]
 
 //Components
 export const BOOKING_BTN = <button className="uppercase 
@@ -129,3 +66,11 @@ export const BOOKING_BTN = <button className="uppercase
     dark:hover:bg-gray-700 
     dark:hover:border-gray-600 
     dark:focus:ring-gray-700">Book a session</button>
+
+export const NEW_SONG_EX = {
+    image_url: ALBUM_ART_EX,
+    image_alt: "Image Alt",
+    song_title: "New Song Title",
+    song_description: "New song description",
+    download_link: "/"
+}

@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.http import require_GET
 
-from .models import StudioEquipment, ServiceSchedule, Service, Artist
+from .models import StudioEquipment, ServiceSchedule, Service, Artist, Track
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +14,9 @@ ERROR_STATUS = "ERROR"
 # Create your views here.
 def index(request):
     return JsonResponse({
-        'message': 'Hello NOTA!',
+        'message': "You've reached the NOTA Studios API! I'm sure you're here by mistake, "
+                   "please visit https://nota-studios-api.onrender.com/admin to login or "
+                   "https://www.notastudiospgh.com/ to view the NOTA Studios website.",
         'status': OK_STATUS
     })
 
@@ -41,7 +43,7 @@ def get_studio_services(request):
             'message': 'Successfully fetched Services List',
             'status': OK_STATUS
         }, status = 200)
-    except Exception:
+    except Exception as error:
         logger.debug("Unable to fetch services list: ")
         return JsonResponse({
             'data': None,
@@ -68,7 +70,7 @@ def get_service_schedule(request):
             'message' : 'Service Schedule fetched successfully!',
             'status' : OK_STATUS
         }, status=200)
-    except Exception:
+    except Exception as error:
         return JsonResponse({
             'data': None,
             'message': 'Failed to fetch service schedule',
@@ -92,7 +94,7 @@ def get_studio_equipment_list(request):
             'status': OK_STATUS
         }, status=200)
 
-    except Exception:
+    except Exception as error:
         return JsonResponse({
             'data': None,
             'message': 'Failed to fetch studio equipment',
@@ -127,9 +129,54 @@ def get_artist_list(request):
             'message':'Artist list fetched successfully',
             'status':OK_STATUS
         }, status=200)
-    except Exception:
+    except Exception as error:
+        logger.exception("Failed to fetch artist list.")
         return JsonResponse({
             'data': None,
             'message': 'Failed to fetch artist list',
             'status': ERROR_STATUS
+        }, status=500)
+
+
+def get_music_list(request):
+    logger.debug(request)
+    logger.debug("REquested music list")
+    try:
+        tracks = (
+            Track.objects
+            .filter(is_published=True)
+        )
+
+        music_list = [
+            {
+                "id": music.id,
+                "title": music.title,
+                "artist": music.artist,
+                "description": music.description,
+                "audio_url": (
+                    music.audio_file.url
+                    if music.audio_file
+                    else None
+                ),
+                "album_art": (
+                    music.album_art.url
+                    if music.album_art
+                    else None
+                ),
+                "is_published": music.is_published,
+            }
+            for music in tracks
+        ]
+
+        return JsonResponse({
+            "data": music_list,
+            "message": "Successfully fetched music list",
+            "status": OK_STATUS,
+        }, status=200)
+    except Exception as error:
+        logger.exception("Failed to fetch music list.");
+        return JsonResponse({
+            'data': None,
+            'message': 'Failed to fetch music list',
+            'status':ERROR_STATUS
         }, status=500)
