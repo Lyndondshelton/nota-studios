@@ -71,3 +71,11 @@ export async function getMusicList(): Promise<Music[]> {
 
     return result.data;
 }
+
+export async function getBlogPost(post: string): Promise<any>{
+    const response = await fetch(`${apiBaseUrl}/blog/${post}`, {cache: "no-store"});
+
+    const result: CommonApiResponse<any> = await response.json();
+
+    return result.data;
+}

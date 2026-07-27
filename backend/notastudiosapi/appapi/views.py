@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.http import require_GET
 
-from .models import StudioEquipment, ServiceSchedule, Service, Artist, Track
+from .models import StudioEquipment, ServiceSchedule, Service, Artist, Track, BlogPost
 
 logger = logging.getLogger(__name__)
 
@@ -139,8 +139,6 @@ def get_artist_list(request):
 
 
 def get_music_list(request):
-    logger.debug(request)
-    logger.debug("REquested music list")
     try:
         tracks = (
             Track.objects
@@ -180,3 +178,44 @@ def get_music_list(request):
             'message': 'Failed to fetch music list',
             'status':ERROR_STATUS
         }, status=500)
+
+
+def get_blog_post(request, post):
+    print(post);
+    try:
+        blog_post = (BlogPost.objects
+                    .filter(slug=post, is_published=True)
+                    .values(
+                        "id",
+                        "title",
+                        "slug",
+                        "sub_title",
+                        "author",
+                        "content",
+                        "updated_on",
+                        "published_date",
+                    )
+                    .first());
+
+        print(blog_post);
+
+        if blog_post is None:
+            return JsonResponse({
+                'data': None,
+                'message': f'No blog post found with slug: {post}',
+                'status': ERROR_STATUS,
+            }, status=500)
+        else:
+            return JsonResponse({
+                'data': blog_post,
+                'message': f'Successfully fetched blog post {post}',
+                'status': OK_STATUS
+            }, status=200)
+    except Exception as error:
+        logger.exception("Failed to fetch blog post %s", post);
+        return JsonResponse({
+            'data': None,
+            'message': 'Failed to fetch blog post at specified slug',
+            'status': ERROR_STATUS
+        }, status=500)
+
