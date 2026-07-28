@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import PageH1 from "@/app/(app)/components/global/page-h1";
 import BeatCard from "@/app/(app)/components/beat-card";
 import { NOTA_DEFAULT_LOGO } from "@/app/(app)/constants/constants";
@@ -11,21 +12,23 @@ export default async function Releases(){
         <>
             <PageH1 title={"Latest Releases"} />
 
-            <div className={"grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 px-7"}>
-                {
-                    tracks.map((track) => (
-                        <BeatCard
-                            key={track.id}
-                            image={track.album_art ? track.album_art : NOTA_DEFAULT_LOGO}
-                            audio={track.audio_url}
-                            title={track.title}
-                            artist={track.artist.name}
-                            desc={track.description}
-                        />
-                    ))
-                }
-            </div>
-            
+
+            <Suspense>
+                <div className={"grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 px-7"}>
+                    {
+                        tracks.map((track) => (
+                            <BeatCard
+                                key={track.id}
+                                image={track.album_art ? track.album_art : NOTA_DEFAULT_LOGO}
+                                audio={track.audio_url}
+                                title={track.title}
+                                artist={track.artist.name}
+                                desc={track.description}
+                            />
+                        ))
+                    }
+                </div>
+            </Suspense>
         </>
     );
 }
