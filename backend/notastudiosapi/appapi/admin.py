@@ -47,7 +47,7 @@ class TrackAdmin(admin.ModelAdmin):
 
     list_display = (
         "title",
-        "artist",
+        "artist__artist_name",
         "release_date",
         "is_published",
         "created_on",
@@ -55,12 +55,12 @@ class TrackAdmin(admin.ModelAdmin):
 
     list_filter = (
         "is_published",
-        "artist",
+        "artist__artist_name",
     )
 
     search_fields = (
         "title",
-        "artist",
+        "artist__artist_name",
     )
 
     actions = ["publish_tracks", "unpublish_tracks"]

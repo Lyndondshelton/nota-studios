@@ -55,15 +55,20 @@ class Artist(models.Model):
         max_length=50,
         blank=True,
     )
-    artist_bio = models.TextField()
-    social_link = models.CharField(max_length=255)
+    artist_bio = models.TextField(blank=True)
+    social_link = models.CharField(max_length=255, blank=True)
+    is_visible = models.BooleanField(default=False)
     def __str__(self):
         return self.artist_name
 
 
 class Track(models.Model):
     title = models.CharField(max_length=50)
-    artist = models.CharField(max_length=50)
+    artist = models.ForeignKey(
+        Artist,
+        on_delete=models.PROTECT,
+        related_name="tracks",
+    )
     description = models.TextField(
         default="Recorded, Mixed & Mastered - NOTA Studios, Pittsburgh, PA",
         blank=True,
@@ -88,7 +93,6 @@ class Track(models.Model):
 
     class Meta:
         ordering=["-release_date"]
-
 
     def __str__(self):
         return self.title

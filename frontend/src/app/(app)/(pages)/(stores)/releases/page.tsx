@@ -20,7 +20,7 @@ export default async function Releases(){
                             image={track.album_art ? track.album_art : NOTA_DEFAULT_LOGO}
                             audio={track.audio_url}
                             title={track.title}
-                            artist={track.artist}
+                            artist={track.artist.name}
                             desc={track.description}
                         />
                     ))

@@ -11,8 +11,8 @@ export default function Home() {
         <div id="pageDesc" className="w-full lg:w-3/4 ">
           <h2 className="mt-4 mb-8 font-extrabold uppercase text-center lg:text-left">Like none of the above</h2>
           <p className="sqsrte-large my-4 break-words uppercase">
-            NONE OF THE ABOVE STUDIOS IS A RECORDING STUDIO LOCATED IN 
-            TURTLE CREEK, PA.
+            NONE OF THE ABOVE STUDIOS IS A MUSIC PRODUCTION BUSINESS LOCATED IN
+            PITTSBURGH, PA.
           </p>
           <p className="sqsrte-large my-4 break-words uppercase">
           WE SPECIALIZE IN MUSIC PRODUCTION SERVICES LIKE AUDIO RECORDING, 

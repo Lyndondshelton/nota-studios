@@ -104,7 +104,9 @@ def get_studio_equipment_list(request):
 @require_GET
 def get_artist_list(request):
     try:
-        artists = Artist.objects.all().order_by("id")
+        artists = (Artist.objects
+                   .filter(is_visible=True)
+                   .order_by("id"))
 
         logger.debug("artist list fetched: ", artists)
 
@@ -149,7 +151,10 @@ def get_music_list(request):
             {
                 "id": music.id,
                 "title": music.title,
-                "artist": music.artist,
+                "artist": {
+                    "id": music.artist.id,
+                    "name": music.artist.artist_name,
+                },
                 "description": music.description,
                 "audio_url": (
                     music.audio_file.url
@@ -165,6 +170,8 @@ def get_music_list(request):
             }
             for music in tracks
         ]
+
+        print(music_list);
 
         return JsonResponse({
             "data": music_list,

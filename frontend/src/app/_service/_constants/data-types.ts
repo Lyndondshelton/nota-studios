@@ -31,7 +31,10 @@ export type Artist = {
 export type Music = {
     id: number;
     title: string;
-    artist: string;
+    artist: {
+        id: number;
+        name: string;
+    }
     description: string | null;
     audio_url: string;
     album_art: string;
