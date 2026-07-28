@@ -42,7 +42,6 @@ SECRET_KEY = os.getenv("SECRET_KEY", default=get_random_secret_key())
 # Modify the DEBUG field in .env.backend. Use 'True' for local dev.
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-
 #Get Allowed Hosts from env
 hosts = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1")
 

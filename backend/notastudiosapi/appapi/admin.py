@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from .models import Service, ServiceSchedule, StudioEquipment, Artist, Track
+from .models import Service, ServiceSchedule, StudioEquipment, Artist, Track, BlogPost
 
 # Admin Site Variables
 admin.site.site_header = "NOTA Studios Admin"
@@ -13,6 +13,7 @@ admin.site.register(ServiceSchedule)
 admin.site.register(StudioEquipment)
 admin.site.register(Artist)
 # admin.site.register(Track)
+admin.site.register(BlogPost)
 
 
 class TrackAdminForm(forms.ModelForm):
@@ -46,7 +47,7 @@ class TrackAdmin(admin.ModelAdmin):
 
     list_display = (
         "title",
-        "artist",
+        "artist__artist_name",
         "release_date",
         "is_published",
         "created_on",
@@ -54,12 +55,14 @@ class TrackAdmin(admin.ModelAdmin):
 
     list_filter = (
         "is_published",
-        "artist",
+        "artist__artist_name",
     )
 
     search_fields = (
         "title",
-        "artist",
+        "artist__artist_name",
     )
+
+    actions = ["publish_tracks", "unpublish_tracks"]
 
 

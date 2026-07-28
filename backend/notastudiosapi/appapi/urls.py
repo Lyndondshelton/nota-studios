@@ -42,4 +42,5 @@ urlpatterns = [
     path('studio-services/', views.get_studio_services, name='studio_services'),
     path('artist-list/', views.get_artist_list, name='artist-list'),
     path('music-list/', views.get_music_list, name='music-list'),
+    path('blog/<slug:post>/', views.get_blog_post, name='blog-post')
 ]

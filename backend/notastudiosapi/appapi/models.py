@@ -1,6 +1,14 @@
 from django.core.validators import FileExtensionValidator
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+
+"""
+This is where database tables are defined. Models define how data is stored.
+CharField and TextField do not require max_length for PostgreSQL, but should be defined for CharField incase the db is 
+migrated to any other db adapter, and for User Experience (UX). TextField should only use max_length 
+if User Interface/Experience (UI/UX) issues occur.
+"""
 
 # Create your models here.
 class DayOfWeek(models.IntegerChoices):
@@ -22,22 +30,22 @@ class ServiceSchedule(models.Model):
 
 class Service(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=500)
-    sub_description = models.TextField(max_length=500, blank=True, default="")
-    price_desc = models.TextField(max_length=255, blank=True, default="")
+    description = models.TextField()
+    sub_description = models.TextField(blank=True, default="")
+    price_desc = models.TextField(blank=True, default="")
     def __str__(self):
         return self.name
 
 
 class StudioEquipment(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=200)
+    description = models.TextField()
     def __str__(self):
         return self.name
 
 
 class Artist(models.Model):
-    artist_name = models.CharField(max_length=100)
+    artist_name = models.CharField(max_length=50)
     featured_image = models.ImageField(
         upload_to="imgs/artists/",
         blank=True,
@@ -47,17 +55,21 @@ class Artist(models.Model):
         max_length=50,
         blank=True,
     )
-    artist_bio = models.TextField(max_length=1000)
-    social_link = models.CharField(max_length=255)
+    artist_bio = models.TextField(blank=True)
+    social_link = models.CharField(max_length=255, blank=True)
+    is_visible = models.BooleanField(default=False)
     def __str__(self):
         return self.artist_name
 
 
 class Track(models.Model):
     title = models.CharField(max_length=50)
-    artist = models.CharField(max_length=50)
+    artist = models.ForeignKey(
+        Artist,
+        on_delete=models.PROTECT,
+        related_name="tracks",
+    )
     description = models.TextField(
-        max_length=500,
         default="Recorded, Mixed & Mastered - NOTA Studios, Pittsburgh, PA",
         blank=True,
         null=True,
@@ -82,6 +94,40 @@ class Track(models.Model):
     class Meta:
         ordering=["-release_date"]
 
+    def __str__(self):
+        return self.title
+
+
+class BlogPost(models.Model):
+    title = models.CharField(
+        max_length=255,
+        unique=True)
+    slug = models.SlugField(
+        unique=True,
+        blank=True,
+        help_text="Leave blank to generate automatically from title.")
+    sub_title = models.CharField(
+        max_length=255,
+        blank=True,)
+    author = models.CharField(max_length=50)
+    content = models.TextField(
+        help_text="Full blog post using Markdown")
+    updated_on = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(default=False)
+    published_date = models.DateTimeField(
+        blank=True,
+        null=True,
+    )
+
+    # if self.is_published and self.published_date is None:
+    #     self.published_date = timezone.now()
+
+    def save(self, *args, **kwargs):
+        #Create slug from title if user doesn't
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

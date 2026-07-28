@@ -1,8 +1,7 @@
 import PageH1 from "@/app/(app)/components/global/page-h1";
 import BeatCard from "@/app/(app)/components/beat-card";
-import { NEW_SONG_EX, NOTA_DEFAULT_LOGO } from "@/app/(app)/constants/constants";
+import { NOTA_DEFAULT_LOGO } from "@/app/(app)/constants/constants";
 import { getMusicList } from "@/app/_service/app-api-service";
-import { Music } from "@/app/_service/_constants/data-types";
 
 
 export default async function Releases(){
@@ -20,7 +19,7 @@ export default async function Releases(){
                             image={track.album_art ? track.album_art : NOTA_DEFAULT_LOGO}
                             audio={track.audio_url}
                             title={track.title}
-                            artist={track.artist}
+                            artist={track.artist.name}
                             desc={track.description}
                         />
                     ))
