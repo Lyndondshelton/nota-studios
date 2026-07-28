@@ -23,7 +23,6 @@ def index(request):
 
 @require_GET
 def get_studio_services(request):
-    logger.debug("Attempting to fetch studio services...")
     try:
         services = [
             {
@@ -36,15 +35,12 @@ def get_studio_services(request):
             for service in Service.objects.order_by('id')
         ]
 
-        logger.debug("Able to create services array: ", services)
-
         return JsonResponse({
             'data': services,
             'message': 'Successfully fetched Services List',
             'status': OK_STATUS
         }, status = 200)
     except Exception as error:
-        logger.debug("Unable to fetch services list: ")
         return JsonResponse({
             'data': None,
             'message': 'Unexpected error occurred while fetching Services List',
@@ -108,8 +104,6 @@ def get_artist_list(request):
                    .filter(is_visible=True)
                    .order_by("id"))
 
-        logger.debug("artist list fetched: ", artists)
-
         artist_data = [
             {
                 "id": artist.id,
@@ -171,8 +165,6 @@ def get_music_list(request):
             for music in tracks
         ]
 
-        print(music_list);
-
         return JsonResponse({
             "data": music_list,
             "message": "Successfully fetched music list",
@@ -188,7 +180,6 @@ def get_music_list(request):
 
 
 def get_blog_post(request, post):
-    print(post);
     try:
         blog_post = (BlogPost.objects
                     .filter(slug=post, is_published=True)
@@ -203,8 +194,6 @@ def get_blog_post(request, post):
                         "published_date",
                     )
                     .first());
-
-        print(blog_post);
 
         if blog_post is None:
             return JsonResponse({

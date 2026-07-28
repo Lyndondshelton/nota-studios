@@ -40,3 +40,14 @@ export type Music = {
     album_art: string;
     is_published: boolean;
 }
+
+export type Blog = {
+    id: number;
+    title: string;
+    slug: string;
+    sub_title: string;
+    author: string;
+    content: string;
+    updated_on: string
+    published_date: string;
+}

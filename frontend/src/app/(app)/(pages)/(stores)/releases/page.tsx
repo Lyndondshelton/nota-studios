@@ -1,8 +1,7 @@
 import PageH1 from "@/app/(app)/components/global/page-h1";
 import BeatCard from "@/app/(app)/components/beat-card";
-import { NEW_SONG_EX, NOTA_DEFAULT_LOGO } from "@/app/(app)/constants/constants";
+import { NOTA_DEFAULT_LOGO } from "@/app/(app)/constants/constants";
 import { getMusicList } from "@/app/_service/app-api-service";
-import { Music } from "@/app/_service/_constants/data-types";
 
 
 export default async function Releases(){
