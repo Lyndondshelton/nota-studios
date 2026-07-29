@@ -5,8 +5,17 @@ import {StudioEquipment, ServiceSchedule, Artist, Service, Music, Blog} from "@/
 console.log("API Base URL from .env, ", apiBaseUrl);
 
 export async function getStudioServices(): Promise<Service[]>{
-    const response = await fetch(`${ apiBaseUrl }/studio-services/`,
-        {cache: "no-store"});
+    const response = await fetch(`${ apiBaseUrl }/studio-services/`, {
+            method: "GET",
+            headers: {
+                Accept: "application/json"
+            },
+            cache: "force-cache",
+            next: {
+                revalidate: 86400,
+                tags: ["services"]
+            },
+        });
 
     if(!response.ok){
         throw new Error("Error fetching services list");
@@ -18,8 +27,17 @@ export async function getStudioServices(): Promise<Service[]>{
 }
 
 export async function getServiceSchedule(): Promise<ServiceSchedule[]> {
-    const response = await fetch(`${ apiBaseUrl }/service-schedule/`,
-        {cache: "no-store"});
+    const response = await fetch(`${ apiBaseUrl }/service-schedule/`, {
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        },
+        cache: "force-cache",
+        next: {
+            revalidate: 86400,
+            tags: ["services"]
+        },
+    });
 
     if(!response.ok){
         throw new Error("Error fetching service schedule")
@@ -32,7 +50,15 @@ export async function getServiceSchedule(): Promise<ServiceSchedule[]> {
 
 export async function getStudioEquipmentList(): Promise<StudioEquipment[]> {
     const response = await fetch(`${ apiBaseUrl }/studio-equipment/`, {
-        cache: "no-store"
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        },
+        cache: "force-cache",
+        next: {
+            revalidate: 86400,
+            tags: ["equipment", "services"]
+        },
     });
 
     if(!response.ok){
@@ -46,7 +72,15 @@ export async function getStudioEquipmentList(): Promise<StudioEquipment[]> {
 
 export async  function getArtistList(): Promise<Artist[]>{
     const response = await fetch(`${ apiBaseUrl }/artist-list/`, {
-        cache: "no-store"
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        },
+        cache: "force-cache",
+        next: {
+            revalidate: 600,
+            tags: ["artists", "team"]
+        },
     });
 
     if(!response.ok){
@@ -60,7 +94,15 @@ export async  function getArtistList(): Promise<Artist[]>{
 
 export async function getMusicList(): Promise<Music[]> {
     const response = await fetch(`${apiBaseUrl}/music-list/`, {
-        cache: "no-store"
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        },
+        cache: "force-cache",
+        next: {
+            revalidate: 60,
+            tags: ["tracks", "music"]
+        },
     });
 
     if(!response.ok){
@@ -73,7 +115,17 @@ export async function getMusicList(): Promise<Music[]> {
 }
 
 export async function getBlogPost(post: string): Promise<Blog>{
-    const response = await fetch(`${apiBaseUrl}/blog/${post}`, {cache: "no-store"});
+    const response = await fetch(`${apiBaseUrl}/blog/${post}`, {
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        },
+        cache: "force-cache",
+        next: {
+            revalidate: 60,
+            tags: ["blog"]
+        },
+    });
 
     const result: CommonApiResponse<Blog> = await response.json();
 
