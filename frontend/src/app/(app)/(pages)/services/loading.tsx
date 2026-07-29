@@ -5,7 +5,7 @@ export default function Loading() {
     return (
         <SkeletonTheme baseColor="#1a1a1a">
             <Skeleton
-                width={'50vw'}
+                width={'80vw'}
                 count={10}/>
         </SkeletonTheme>
     )
