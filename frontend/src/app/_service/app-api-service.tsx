@@ -76,11 +76,7 @@ export async  function getArtistList(): Promise<Artist[]>{
         headers: {
             Accept: "application/json"
         },
-        cache: "force-cache",
-        next: {
-            revalidate: 600,
-            tags: ["artists", "team"]
-        },
+        cache: "no-store",
     });
 
     if(!response.ok){
@@ -98,11 +94,7 @@ export async function getMusicList(): Promise<Music[]> {
         headers: {
             Accept: "application/json"
         },
-        cache: "force-cache",
-        next: {
-            revalidate: 60,
-            tags: ["tracks", "music"]
-        },
+        cache: "no-store",
     });
 
     if(!response.ok){
@@ -120,11 +112,7 @@ export async function getBlogPost(post: string): Promise<Blog>{
         headers: {
             Accept: "application/json"
         },
-        cache: "force-cache",
-        next: {
-            revalidate: 60,
-            tags: ["blog"]
-        },
+        cache: "no-store",
     });
 
     const result: CommonApiResponse<Blog> = await response.json();
