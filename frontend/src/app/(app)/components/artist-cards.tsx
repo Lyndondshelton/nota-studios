@@ -7,8 +7,8 @@ export default function ArtistCards(props){
             <Link href={props.link} target="_blank">
                 <div className="w-full aspect-square relative">
                     <Image
-                        src={props.image} 
-                        alt={props.image}
+                        src={props.image}
+                        alt={`${props.artist} artist portrait`}
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover"/>

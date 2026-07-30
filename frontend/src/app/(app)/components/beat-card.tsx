@@ -43,7 +43,7 @@ export default function BeatCard(props) {
             <div className="w-full aspect-square relative">
                 <Image
                     src={props.image}
-                    alt={props.image}
+                    alt={`${props.title} by ${props.artist} cover`}
                     fill
                     sizes="(max-width: 768px) 33vh"
                 className="object-cover"/>
