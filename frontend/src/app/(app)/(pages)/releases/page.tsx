@@ -16,20 +16,26 @@ async function TrackGrid(){
     const tracks = await getMusicList();
 
     return (
-        <div className={"grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 px-7"}>
-            {
-                tracks.map((track) => (
-                    <BeatCard
-                        key={track.id}
-                        image={track.album_art ? track.album_art : NOTA_DEFAULT_LOGO}
-                        audio={track.audio_url}
-                        title={track.title}
-                        artist={track.artist.name}
-                        desc={track.description}
-                    />
-                ))
-            }
-        </div>
+        <>
+            <PageH1 title={"Latest Releases"} />
+
+            <Suspense>
+                <div className={"grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 px-7"}>
+                    {
+                        tracks.map((track) => (
+                            <BeatCard
+                                key={track.id}
+                                image={track.album_art ? track.album_art : NOTA_DEFAULT_LOGO}
+                                audio={track.audio_url}
+                                title={track.title}
+                                artist={track.artist.name}
+                                desc={track.description}
+                            />
+                        ))
+                    }
+                </div>
+            </Suspense>
+        </>
     );
 }
 
