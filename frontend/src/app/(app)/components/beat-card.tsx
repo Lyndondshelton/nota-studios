@@ -48,8 +48,10 @@ export default function BeatCard(props) {
                     sizes="(max-width: 768px) 33vh"
                 className="object-cover"/>
             </div>
-            <audio controls className={"w-full"}>
-                <source src={props.audio} />
+            <audio controls
+                   controlsList="nodownload"
+                   className="w-full"
+                   src={props.audio}>
                 Your browser does not support audio.
             </audio>
         <div>
