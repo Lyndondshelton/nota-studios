@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function ArtistCards(props){
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-8">
             <Link href={props.link} target="_blank">
-                <div className="w-full aspect-square relative">
+                <div className="image-box ">
                     <Image
                         src={props.image} 
                         alt={props.image}

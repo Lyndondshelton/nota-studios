@@ -31,10 +31,10 @@ export const NAV_LINKS = [
         name: "RELEASES",
         path: "/releases"
     },
-    // {
-    //     name: "MERCH STORE",
-    //     path: "/merch"
-    // }
+    {
+        name: "MERCH STORE",
+        path: "/merch"
+    }
 
 
 ]

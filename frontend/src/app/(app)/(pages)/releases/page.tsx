@@ -16,7 +16,7 @@ async function TrackGrid(){
     const tracks = await getMusicList();
 
     return (
-        <div className={"grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 px-7"}>
+        <div className="card-grid">
             {
                 tracks.map((track) => (
                     <BeatCard

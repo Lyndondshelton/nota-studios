@@ -9,7 +9,7 @@ async function TeamGrid(){
     const artists = await getArtistList();
 
     return(
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8 px-7">
+        <div className="card-grid">
             {
                 artists.map((artist: Artist) => (
                     <ArtistCards

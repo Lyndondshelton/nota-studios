@@ -1,8 +1,39 @@
 const apiBaseUrl = process.env.API_BASE_URL
+export const fwApiToken = process.env.FOURTHWALL_API_TOKEN;
+export const storeBaseUrl = process.env.FW_BASE_URL
 import {CommonApiResponse} from "@/app/_service/_constants/responses";
 import {StudioEquipment, ServiceSchedule, Artist, Service, Music, Blog} from "@/app/_service/_constants/data-types";
 
-console.log("API Base URL from .env, ", apiBaseUrl);
+export async function getAllProducts(): Promise<any>{
+    if (!fwApiToken) {
+        throw new Error("Storefront API token is not configured.");
+    }
+    if(!storeBaseUrl){
+        throw new Error("Store Base URL is not configured.");
+    }
+
+    const url = new URL("/v1/collections/all/products", storeBaseUrl);
+    url.searchParams.set("storefront_token", fwApiToken);
+
+    const response = await fetch(url, {cache: 'no-cache'});
+
+    const { results, paging } = await response.json();
+
+    return { results, paging };
+}
+
+export async function getAllCollections(): Promise<any>{
+    const url = `${storeBaseUrl}/all/products?${fwApiToken}`;
+    console.log("URL: ", url);
+
+    const response = await fetch(url);
+
+    console.log(response);
+
+    const {results, paging } = await response.json();
+
+    console.log("Results from fourthwall", results, paging);
+}
 
 export async function getStudioServices(): Promise<Service[]>{
     const response = await fetch(`${ apiBaseUrl }/studio-services/`, {
@@ -115,7 +146,15 @@ export async function getBlogPost(post: string): Promise<Blog>{
         cache: "no-store",
     });
 
+    console.log("Response before getting json: ", response);
+
     const result: CommonApiResponse<Blog> = await response.json();
+
+    if(result && result.data === null && result.status === 'ERROR'){
+        console.error(`Error fetching blog post ${post}: `, result.message);
+    }
+
+    console.log("Result as json: ", result);
 
     return result.data;
 }

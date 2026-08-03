@@ -35,24 +35,24 @@ body {
 }
 
 h1{
-  line-height: calc(var(--heading-font-line-height)*(1 +(1 - var(--heading-1-size-value)) / 25));
+  line-height: calc(var(--heading-font-line-height)*(1 + (1 - var(--heading-1-size-value)) / 25));
   font-size: clamp(2.5rem, 5.5vw, 4.9rem);
 }
 
 h2{
-  line-height: calc(var(--heading-font-line-height)*(1 +(1 - var(--heading-2-size-value)) / 25));
+  line-height: calc(var(--heading-font-line-height)*(1 + (1 - var(--heading-2-size-value)) / 25));
   font-size: clamp(2.1rem, 5.3vw, 4.9rem);
 }
 
 h3{
   font-size: calc((var(--heading-3-size-value) - 1)* 1.2vw + 1rem);
-  line-height: calc(var(--heading-font-line-height)*(1 +(1 - var(--heading-3-size-value)) / 25));
+  line-height: calc(var(--heading-font-line-height)*(1 + (1 - var(--heading-3-size-value)) / 25));
   margin:1rem 0;
 }
 
 h4{
   font-size: calc((var(--heading-4-size-value) - 1)* 1.2vw + 1rem);
-  line-height: calc(var(--heading-font-line-height)*(1 +(1 - var(--heading-4-size-value)) / 25));
+  line-height: calc(var(--heading-font-line-height)*(1 + (1 - var(--heading-4-size-value)) / 25));
 }
 
 .sqsrte-large {
@@ -60,3 +60,23 @@ h4{
   line-height: var(--body-font-line-height);
 }
 
+@layer components {
+  .card-grid {
+    @apply grid md:grid-cols-3 sm:grid-cols-2 gap-x-8 mx-4 px-2;
+  }
+  .merch-card-grid{
+    @apply grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 gap-x-8 mx-4 px-2;
+  }
+  .image-box {
+    @apply w-full aspect-square relative;
+  }
+  .image-overlay {
+    @apply absolute inset-0 z-10 bg-gray-300/0 grid grid-cols-1 place-content-center;
+  }
+  .image-overlay:hover{
+    @apply bg-gray-300/25;
+  }
+  .merch-button{
+    @apply w-7/12 aspect-[5/1] text-black mx-auto my-1 invisible group-hover:visible;
+  }
+}

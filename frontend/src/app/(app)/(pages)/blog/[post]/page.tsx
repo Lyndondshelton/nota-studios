@@ -3,7 +3,7 @@ import { getBlogPost } from "@/app/_service/app-api-service"
 export default async function BlogPostPage({
      params,
  }: {
-     params: Promise<{post: string }>
+     params: Promise<{ post: string }>
  }) {
     const { post } = await params;
 
