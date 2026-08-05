@@ -17,17 +17,35 @@ export type FourthwallVariant = {
     name: string;
     sku: string;
     unitPrice: UnitPrice;
-    compareAtPrice: object | null,
-    attributes: object[]
-    stock: object[]
-    weight: object[]
-    dimensions: object[]
-    images: object[]
+    compareAtPrice: object | null;
+    attributes: {
+        description: string;
+        color: {
+            name: string;
+            swatch: string;
+        };
+        size: {
+            name: string;
+        }
+    }
+    stock: { type: string, };
+    weight: {
+        value: number;
+        unit: string;
+    };
+    dimensions: {
+        length: number;
+        width: number;
+        height: number;
+        unit: string;
+    };
+    images: FourthwallImage[];
 }
 
 export type Product = {
     id: string;
     name: string;
+    slug: string;
     description: string;
     state: object;
     access: object;
@@ -42,3 +60,4 @@ export type Product = {
 export const CurrencyMap = new Map<string, string>([
     ["USD", "$"],
 ]);
+

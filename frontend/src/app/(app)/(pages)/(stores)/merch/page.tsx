@@ -1,12 +1,13 @@
 import { cookies } from 'next/headers';
-import Image from 'next/image'
+import Image from 'next/image';
 import { getAllProducts, fwApiToken, storeBaseUrl } from "@/app/_service/app-api-service";
-import { Product, FourthwallImage, FourthwallVariant, CurrencyMap } from "./store-data-types";
+import { Product, FourthwallImage, FourthwallVariant, CurrencyMap } from "./_util/store-data-types";
 import StoreItem from "./merch-store-item";
 import PageH1 from "@/app/(app)/components/global/page-h1";
 
 export default async function Merch(){
     const result = await getAllProducts();
+    // console.log("All Products: ", result.results);
     const products: Product[] = result.results;
     const firstProduct: Product = products.at(0);
     const page = result.paging;
@@ -25,8 +26,11 @@ export default async function Merch(){
             <PageH1 title={"MERCH STORE"}/>
             <div className="merch-card-grid">
                 {products.map((product) => {
+                    console.log("Product Slug: ", product.slug);
                     const featuredImage = product.images.at(0);
                     const variants: FourthwallVariant[] = product.variants;
+
+                    // console.log("Variants: ", variants)
 
                     if (!featuredImage || variants.length === 0) {
                         return null;

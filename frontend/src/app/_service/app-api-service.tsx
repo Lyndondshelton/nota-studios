@@ -1,25 +1,44 @@
-const apiBaseUrl = process.env.API_BASE_URL
-export const fwApiToken = process.env.FOURTHWALL_API_TOKEN;
-export const storeBaseUrl = process.env.FW_BASE_URL
 import {CommonApiResponse} from "@/app/_service/_constants/responses";
 import {StudioEquipment, ServiceSchedule, Artist, Service, Music, Blog} from "@/app/_service/_constants/data-types";
 
-export async function getAllProducts(): Promise<any>{
+const apiBaseUrl = process.env.API_BASE_URL
+const fwApiToken = process.env.FOURTHWALL_API_TOKEN;
+const storeBaseUrl = process.env.FW_BASE_URL
+const STOREFRONT_TOKEN = "storefront_token";
+
+function validateEnv(){
     if (!fwApiToken) {
         throw new Error("Storefront API token is not configured.");
     }
     if(!storeBaseUrl){
         throw new Error("Store Base URL is not configured.");
     }
+}
+
+export async function getAllProducts(): Promise<any>{
+    validateEnv();
 
     const url = new URL("/v1/collections/all/products", storeBaseUrl);
-    url.searchParams.set("storefront_token", fwApiToken);
+    url.searchParams.set(STOREFRONT_TOKEN, fwApiToken);
 
     const response = await fetch(url, {cache: 'no-cache'});
 
     const { results, paging } = await response.json();
 
     return { results, paging };
+}
+
+export async function getMerchDetails(slug: string): Promise<any>{
+    validateEnv();
+
+    const url = new URL(`/v1/products/${slug}`, storeBaseUrl);
+    url.searchParams.set(STOREFRONT_TOKEN, fwApiToken);
+
+    const response = await fetch(url, {cache: 'no-cache'})
+
+    const result = await response.json();
+
+    return result;
 }
 
 export async function getAllCollections(): Promise<any>{
