@@ -1,6 +1,5 @@
-import { cookies } from 'next/headers';
 import Image from 'next/image';
-import { getAllProducts, fwApiToken, storeBaseUrl } from "@/app/_service/app-api-service";
+import { getAllProducts } from "@/app/_service/app-api-service";
 import { Product, FourthwallImage, FourthwallVariant, CurrencyMap, formatCurrency } from "./_util/store-data-types";
 import StoreItem from "./merch-store-item";
 import PageH1 from "@/app/(app)/components/global/page-h1";
@@ -19,7 +18,6 @@ export default async function Merch(){
             <PageH1 title={"MERCH STORE"}/>
             <div className="merch-card-grid">
                 {products.map((product) => {
-                    console.log("Product Slug: ", product.slug);
                     const featuredImage = product.images.at(0);
                     const variants: FourthwallVariant[] = product.variants;
 
