@@ -16,7 +16,13 @@ function validateEnv(){
     }
 }
 
-export async function getAllProducts(): Promise<Product[]>{
+type FourthwallResponse = {
+    results: Product[];
+    paging: object;
+}
+
+
+export async function getAllProducts(): Promise<FourthwallResponse>{
     validateEnv();
 
     const url = new URL("/v1/collections/all/products", storeBaseUrl);
