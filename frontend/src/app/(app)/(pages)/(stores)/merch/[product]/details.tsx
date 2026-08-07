@@ -2,9 +2,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import clsx from 'clsx';
-import { Product, FourthwallVariant, FourthwallImage } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
+import { Product, FourthwallVariant, FourthwallImage, formatCurrency } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
 import DropdownMenu from "@/app/(app)/components/dropdown-menu";
-import { formatCurrency } from "@/app/(app)/(pages)/(stores)/merch/page";
 
 /**
  * Client component that handles states for the ___/merch/[product]___ details. Accepts Fourthwall {@Link Product}

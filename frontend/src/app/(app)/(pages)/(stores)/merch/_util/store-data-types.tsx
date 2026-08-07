@@ -1,3 +1,4 @@
+import {getAllProducts} from "@/app/_service/app-api-service";
 
 export type FourthwallImage = {
     id: string;
@@ -67,3 +68,9 @@ export const CurrencyMap = new Map<string, string>([
     ["USD", "$"],
 ]);
 
+export function formatCurrency(value: number, currency: string){
+    return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency,
+    }).format(value);
+};

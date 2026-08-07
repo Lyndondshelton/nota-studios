@@ -1,16 +1,9 @@
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { getAllProducts, fwApiToken, storeBaseUrl } from "@/app/_service/app-api-service";
-import { Product, FourthwallImage, FourthwallVariant, CurrencyMap } from "./_util/store-data-types";
+import { Product, FourthwallImage, FourthwallVariant, CurrencyMap, formatCurrency } from "./_util/store-data-types";
 import StoreItem from "./merch-store-item";
 import PageH1 from "@/app/(app)/components/global/page-h1";
-
-export function formatCurrency(value: number, currency: string){
-    return new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency,
-    }).format(value);
-};
 
 export default async function Merch(){
     const result = await getAllProducts();
