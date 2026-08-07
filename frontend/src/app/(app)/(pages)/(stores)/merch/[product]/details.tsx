@@ -38,7 +38,7 @@ export default function PageDetails({ details } : {details: Product}){
         (price) => price.size === selectedSize
     )?.price;
 
-    const initialImage: FourthwallImage = details.images.at(0);
+    const initialImage: FourthwallImage | undefined = details.images?.at(0);
     const [selectedImage, setImage] = useState(initialImage);
 
     /**
