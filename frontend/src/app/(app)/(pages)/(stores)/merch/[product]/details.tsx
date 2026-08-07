@@ -56,14 +56,13 @@ export default function PageDetails(
             <section id="productDetails" className={"flex flex-row flex-wrap"}>
                 <div id="productImages" className={"w-full md:w-1/2 md:px-4"}>
                     <div id="imageBox" className={"relative w-full"}>
-                        <Image src={selectedImage?.url}
+                        <Image src={selectedImage.url}
                                alt={`${details.name} - selected image`}
-                               width={selectedImage?.width}
-                               height={selectedImage?.height}
-                               objectFit={"contain"}
+                               width={selectedImage.width}
+                               height={selectedImage.height}
                                size={"(max-width: 768px) 100vw, 33vw "}
                                className={
-                                   "bg-white w-full h-auto rounded-xl"
+                                   "bg-white w-full h-auto rounded-xl object-contain"
                                }/>
                     </div>
                     <div id="imagePanel" className={"py-2 flex gap-2 flex-row flex-nowrap overflow-x-scroll"}>
