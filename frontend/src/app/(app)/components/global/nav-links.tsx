@@ -13,7 +13,13 @@ export default function NavLinks(){
                 NAV_LINKS.map((link, index) => (
                     <div key={index}>
                         <div className="mx-1">
-                            <Link href={link.path} className={clsx( {'underline':pathname===link.path} )}>{link.name}</Link>
+                            <Link
+                                href={link.path}
+                                className={
+                                    clsx( {'underline':pathname===link.path} )
+                                }>
+                                {link.name}
+                            </Link>
                         </div>
                     </div>
                 ))

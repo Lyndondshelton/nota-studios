@@ -42,6 +42,12 @@ export type FourthwallVariant = {
     images: FourthwallImage[];
 }
 
+type AdditionalInfo = {
+    type: string;
+    title: string;
+    bodyHtml: string;
+}
+
 export type Product = {
     id: string;
     name: string;
@@ -51,7 +57,7 @@ export type Product = {
     access: object;
     images: FourthwallImage[];
     variants: FourthwallVariant[];
-    additionalInformation: object[];
+    additionalInformation: AdditionalInfo[];
     sizeGuide: string | null;
     createdAt: string;
     updatedAt: string;

@@ -5,19 +5,19 @@ import { Product, FourthwallImage, FourthwallVariant, CurrencyMap } from "./_uti
 import StoreItem from "./merch-store-item";
 import PageH1 from "@/app/(app)/components/global/page-h1";
 
+export const formatCurrency = (value: number, currency: string) => {
+    return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency,
+    }).format(value);
+};
+
 export default async function Merch(){
     const result = await getAllProducts();
     // console.log("All Products: ", result.results);
     const products: Product[] = result.results;
     const firstProduct: Product = products.at(0);
     const page = result.paging;
-
-    const formatCurrency = (value: number, currency: string) => {
-        return new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency,
-        }).format(value);
-    };
 
     // console.log("Products List: ", products);
 
@@ -59,6 +59,7 @@ export default async function Merch(){
                             alt={product.name}
                             price={priceDesc}
                             name={product.name}
+                            slug={product.slug}
                         />
                     );
                 })}
