@@ -43,13 +43,15 @@ export default function BeatCard(props) {
             <div className="image-box">
                 <Image
                     src={props.image}
-                    alt={props.image}
+                    alt={`${props.title} by ${props.artist} cover`}
                     fill
                     sizes="(max-width: 768px) 33vh"
                 className="object-cover"/>
             </div>
-            <audio controls className={"w-full"}>
-                <source src={props.audio} />
+            <audio controls
+                   controlsList="nodownload"
+                   className="w-full"
+                   src={props.audio}>
                 Your browser does not support audio.
             </audio>
         <div>

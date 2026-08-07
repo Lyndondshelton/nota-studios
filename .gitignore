@@ -28,6 +28,7 @@ frontend/node_modules
 *.pem
 staticfiles/
 media/
+blogs/
 
 # debug
 npm-debug.log*
