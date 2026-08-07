@@ -34,7 +34,11 @@ export const NAV_LINKS = [
     // {
     //     name: "MERCH STORE",
     //     path: "/merch"
-    // }
+    // },
+    {
+        name: "EVENTS",
+        path: "/events/upcoming"
+    }
 
 
 ]
