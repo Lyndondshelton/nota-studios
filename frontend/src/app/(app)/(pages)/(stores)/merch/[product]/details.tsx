@@ -60,7 +60,7 @@ export default function PageDetails(
                                alt={`${details.name} - selected image`}
                                width={selectedImage.width}
                                height={selectedImage.height}
-                               size="(max-width: 768px) 100vw, 33vw "
+                               sizes="(max-width: 768px) 100vw, 33vw "
                                className={
                                    "bg-white w-full h-auto rounded-xl object-contain"
                                }/>
