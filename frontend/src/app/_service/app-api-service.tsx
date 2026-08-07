@@ -1,5 +1,6 @@
 import {CommonApiResponse} from "@/app/_service/_constants/responses";
 import {StudioEquipment, ServiceSchedule, Artist, Service, Music, Blog} from "@/app/_service/_constants/data-types";
+import { Product } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
 
 const apiBaseUrl = process.env.API_BASE_URL
 const fwApiToken = process.env.FOURTHWALL_API_TOKEN;
@@ -15,7 +16,7 @@ function validateEnv(){
     }
 }
 
-export async function getAllProducts(): Promise<any>{
+export async function getAllProducts(): Promise<Product[]>{
     validateEnv();
 
     const url = new URL("/v1/collections/all/products", storeBaseUrl);
@@ -28,7 +29,7 @@ export async function getAllProducts(): Promise<any>{
     return { results, paging };
 }
 
-export async function getMerchDetails(slug: string): Promise<any>{
+export async function getMerchDetails(slug: string): Promise<Product>{
     validateEnv();
 
     const url = new URL(`/v1/products/${slug}`, storeBaseUrl);
@@ -39,19 +40,6 @@ export async function getMerchDetails(slug: string): Promise<any>{
     const result = await response.json();
 
     return result;
-}
-
-export async function getAllCollections(): Promise<any>{
-    const url = `${storeBaseUrl}/all/products?${fwApiToken}`;
-    console.log("URL: ", url);
-
-    const response = await fetch(url);
-
-    console.log(response);
-
-    const {results, paging } = await response.json();
-
-    console.log("Results from fourthwall", results, paging);
 }
 
 export async function getStudioServices(): Promise<Service[]>{
