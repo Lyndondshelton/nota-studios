@@ -54,10 +54,10 @@ export default function PageDetails({ details } : {details: Product}){
             <section id="productDetails" className={"flex flex-row flex-wrap"}>
                 <div id="productImages" className={"w-full md:w-1/2 md:px-4"}>
                     <div id="imageBox" className={"relative w-full"}>
-                        <Image src={selectedImage.url}
+                        <Image src={selectedImage?.url}
                                alt={`${details.name} - selected image`}
-                               width={selectedImage.width}
-                               height={selectedImage.height}
+                               width={selectedImage?.width}
+                               height={selectedImage?.height}
                                objectFit={"contain"}
                                size={"(max-width: 768px) 100vw, 33vw "}
                                className={
