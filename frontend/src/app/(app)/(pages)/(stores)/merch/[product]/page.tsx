@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getMerchDetails } from "@/app/_service/app-api-service";
 import PageDetails from "./details";
+import { Product } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
 
 /**
  * This page fetches the selected product details from
