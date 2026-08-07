@@ -6,8 +6,15 @@ const nextConfig: NextConfig = {
             {
                 protocol: 'https',
                 hostname: 'notastudios-s3-bucket.s3.amazonaws.com',
-                pathname: '/media/**'
+                pathname: '/media/**',
+                port: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'imgproxy.fourthwall.dev',
+                pathname: '/**',
+                port: '',
+            }
         ],
     },
 };

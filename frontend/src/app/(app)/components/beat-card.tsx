@@ -29,7 +29,7 @@ export default function BeatCard(props) {
     }
 
   return (
-    <div className={"flex flex-col gap-y-2 px-3 " }>
+    <div className={"flex flex-col gap-y-1 px-3 mb-8" }>
         {/*<div className="flex flex-row gap-x-4 bg-[#000000] rounded-full h-[4rem] items-center"></div>*/}
             {/* Custom Audio Player*/}
             {/*{ !isPlaying && <button onClick={playAudio}><PlayButton /></button> }*/}
@@ -40,7 +40,7 @@ export default function BeatCard(props) {
             {/*</audio>*/}
 
             {/* Below is the browser's built in audio player... which is kinda nice... */}
-            <div className="w-full aspect-square relative">
+            <div className="image-box">
                 <Image
                     src={props.image}
                     alt={`${props.title} by ${props.artist} cover`}
