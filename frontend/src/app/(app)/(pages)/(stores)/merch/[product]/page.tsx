@@ -12,7 +12,7 @@ import PageDetails from "./details";
 export default async function ItemDetails({
     params
 } : {
-    params: Promise<{ slug: string}>
+    params: Promise<{ product: string}>
 }) {
     const { product } = await params;
     const details: Product = await getMerchDetails(product);
