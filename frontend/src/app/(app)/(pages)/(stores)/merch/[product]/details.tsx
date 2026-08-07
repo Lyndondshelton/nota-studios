@@ -2,9 +2,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import clsx from 'clsx';
-import { Product, FourthwallVariant, FourthwallImage } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
+import { Product, FourthwallVariant, FourthwallImage, formatCurrency } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
 import DropdownMenu from "@/app/(app)/components/dropdown-menu";
-import { formatCurrency } from "@/app/(app)/(pages)/(stores)/merch/page";
 
 /**
  * Client component that handles states for the ___/merch/[product]___ details. Accepts Fourthwall {@Link Product}
@@ -12,7 +11,9 @@ import { formatCurrency } from "@/app/(app)/(pages)/(stores)/merch/page";
  * @props details - {@Link Product} details
  * @constructor
  */
-export default function PageDetails({ details } : {details: Product}){
+export default function PageDetails(
+    { details, initialImage } : {details: Product, initialImage: FourthwallImage}
+){
     /**
      * The list of available sizes for the specified product.
      */
@@ -39,8 +40,8 @@ export default function PageDetails({ details } : {details: Product}){
         (price) => price.size === selectedSize
     )?.price;
 
-    const initialImage: FourthwallImage = details.images.at(0);
-    const [selectedImage, setImage] = useState(initialImage);
+
+    const [selectedImage, setImage] = useState<FourthwallImage>(initialImage);
 
     /**
      * Returns the HTML element to be used with __dangerouslySetInnerHTML__
@@ -59,10 +60,9 @@ export default function PageDetails({ details } : {details: Product}){
                                alt={`${details.name} - selected image`}
                                width={selectedImage.width}
                                height={selectedImage.height}
-                               objectFit={"contain"}
-                               size={"(max-width: 768px) 100vw, 33vw "}
+                               sizes="(max-width: 768px) 100vw, 33vw "
                                className={
-                                   "bg-white w-full h-auto rounded-xl"
+                                   "bg-white w-full h-auto rounded-xl object-contain"
                                }/>
                     </div>
                     <div id="imagePanel" className={"py-2 flex gap-2 flex-row flex-nowrap overflow-x-scroll"}>

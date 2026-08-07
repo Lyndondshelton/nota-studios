@@ -1,7 +1,7 @@
 'use server';
 
 export async function createCart(){
-    const cookieStore = await cookies();
+    /*const cookieStore = await cookies();
     console.log("Cookie Store: ", cookieStore);
     const cartCookie = cookieStore.get("cartId");
     console.log("Cart ID from Cookie: ", cartCookie);
@@ -42,5 +42,5 @@ export async function createCart(){
         cookieStore.set('cartCookie', responseBody);
     }
 
-    return responseBody;
+    return responseBody;*/
 }

@@ -1,26 +1,19 @@
 import {CommonApiResponse} from "@/app/_service/_constants/responses";
 import {StudioEquipment, ServiceSchedule, Artist, Service, Music, Blog} from "@/app/_service/_constants/data-types";
 import { Product } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
+import {storeConfig} from "./config";
 
-const apiBaseUrl = process.env.API_BASE_URL
-const fwApiToken = process.env.FOURTHWALL_API_TOKEN;
-const storeBaseUrl = process.env.FW_BASE_URL
+const apiBaseUrl = process.env.API_BASE_URL;
 const STOREFRONT_TOKEN = "storefront_token";
 
-function validateEnv(){
-    if (!fwApiToken) {
-        throw new Error("Storefront API token is not configured.");
-    }
-    if(!storeBaseUrl){
-        throw new Error("Store Base URL is not configured.");
-    }
+type FourthwallResponse = {
+    results: Product[];
+    paging: object;
 }
 
-export async function getAllProducts(): Promise<Product[]>{
-    validateEnv();
-
-    const url = new URL("/v1/collections/all/products", storeBaseUrl);
-    url.searchParams.set(STOREFRONT_TOKEN, fwApiToken);
+export async function getAllProducts(): Promise<FourthwallResponse>{
+    const url = new URL("/v1/collections/all/products", storeConfig.storeBaseUrl);
+    url.searchParams.set(STOREFRONT_TOKEN, storeConfig.fwApiToken);
 
     const response = await fetch(url, {cache: 'no-cache'});
 
@@ -30,10 +23,8 @@ export async function getAllProducts(): Promise<Product[]>{
 }
 
 export async function getMerchDetails(slug: string): Promise<Product>{
-    validateEnv();
-
-    const url = new URL(`/v1/products/${slug}`, storeBaseUrl);
-    url.searchParams.set(STOREFRONT_TOKEN, fwApiToken);
+    const url = new URL(`/v1/products/${slug}`, storeConfig.storeBaseUrl);
+    url.searchParams.set(STOREFRONT_TOKEN, storeConfig.fwApiToken);
 
     const response = await fetch(url, {cache: 'no-cache'})
 

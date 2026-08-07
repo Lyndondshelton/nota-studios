@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getMerchDetails } from "@/app/_service/app-api-service";
 import PageDetails from "./details";
+import { Product } from "@/app/(app)/(pages)/(stores)/merch/_util/store-data-types";
 
 /**
  * This page fetches the selected product details from
@@ -12,14 +13,21 @@ import PageDetails from "./details";
 export default async function ItemDetails({
     params
 } : {
-    params: Promise<{ slug: string}>
+    params: Promise<{ product: string}>
 }) {
     const { product } = await params;
     const details: Product = await getMerchDetails(product);
 
+    const initialImage = details.images.at(0);
+    if(!initialImage){
+        return <></>
+    }
+
     return (
         <>
-            <PageDetails details={details}/>
+            <PageDetails
+                details={details}
+                initialImage={initialImage}/>
         </>
     );
 }

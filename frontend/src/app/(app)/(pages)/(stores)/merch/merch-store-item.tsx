@@ -16,7 +16,7 @@ interface StoreItem {
     name: string;
     url: string;
     alt: string;
-    price: number;
+    price: string;
     slug?: string;
 }
 
