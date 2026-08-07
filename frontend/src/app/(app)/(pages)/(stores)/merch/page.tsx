@@ -8,7 +8,6 @@ export default async function Merch(){
     const result = await getAllProducts();
     // console.log("All Products: ", result.results);
     const products: Product[] = result.results;
-    const firstProduct: Product = products.at(0);
     const page = result.paging;
 
     // console.log("Products List: ", products);
