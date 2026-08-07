@@ -5,7 +5,7 @@ import { Product, FourthwallImage, FourthwallVariant, CurrencyMap } from "./_uti
 import StoreItem from "./merch-store-item";
 import PageH1 from "@/app/(app)/components/global/page-h1";
 
-export const formatCurrency = (value: number, currency: string) => {
+export function formatCurrency(value: number, currency: string){
     return new Intl.NumberFormat("en-US", {
         style: "currency",
         currency,
