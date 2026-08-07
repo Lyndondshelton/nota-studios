@@ -11,7 +11,9 @@ import DropdownMenu from "@/app/(app)/components/dropdown-menu";
  * @props details - {@Link Product} details
  * @constructor
  */
-export default function PageDetails({ details } : {details: Product}){
+export default function PageDetails(
+    { details, initialImage } : {details: Product, initialImage: FourthwallImage}
+){
     /**
      * The list of available sizes for the specified product.
      */
@@ -38,8 +40,8 @@ export default function PageDetails({ details } : {details: Product}){
         (price) => price.size === selectedSize
     )?.price;
 
-    const initialImage: FourthwallImage | undefined = details.images?.at(0);
-    const [selectedImage, setImage] = useState(initialImage);
+
+    const [selectedImage, setImage] = useState<FourthwallImage>(initialImage);
 
     /**
      * Returns the HTML element to be used with __dangerouslySetInnerHTML__

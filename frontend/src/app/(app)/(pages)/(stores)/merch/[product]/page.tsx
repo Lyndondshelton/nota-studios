@@ -17,9 +17,16 @@ export default async function ItemDetails({
     const { product } = await params;
     const details: Product = await getMerchDetails(product);
 
+    const initialImage = details.images.at(0);
+    if(!initialImage){
+        return <></>
+    }
+
     return (
         <>
-            <PageDetails details={details}/>
+            <PageDetails
+                details={details}
+                initialImage={initialImage}/>
         </>
     );
 }
